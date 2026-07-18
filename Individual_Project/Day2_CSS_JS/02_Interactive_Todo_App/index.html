@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Todo App</title>
+
+    <!-- [개발자 확인] PPT에서 HTML/CSS 파일명은 지정되지 않아 기존 강의자료 방식대로 index.html / css/style.css를 사용했습니다. -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="todo-app">
+        <header class="app-header">
+            <div class="header-row">
+                <p class="eyebrow">
+                    <span class="eyebrow-dot" aria-hidden="true"></span>
+                    나만의 하루 플래너
+                </p>
+
+                <!-- [종합실습4 UI 개선] 오늘 날짜를 제목 옆 작은 배지로 배치해 정보 위계를 낮췄습니다. -->
+                <p id="current-date" class="date-badge"></p>
+            </div>
+
+            <!-- [사용자 직접 입력 - 선택] 과제 제출자 이름이나 원하는 앱 제목으로 바꿀 수 있습니다. -->
+            <h1>인터랙티브 할 일 관리</h1>
+            <p class="app-description">
+                해야 할 일을 시간 순서대로 기록하고, 완료 상태와 필터를 한눈에 관리해 보세요.
+            </p>
+        </header>
+
+        <!-- ==========================================================
+             [종합실습4 UI 개선] [사용자 직접 요청]
+             오늘의 목표를 한 줄로 적어두는 카드입니다. todos 배열과는
+             완전히 별개의 상태이며, storage.js의 loadGoal()/saveGoal()로
+             localStorage에 저장·복원되어 새로고침해도 남아 있습니다.
+             ========================================================== -->
+        <section class="goal-card" aria-labelledby="goal-title">
+            <p class="goal-tag">YOUR GOAL</p>
+
+            <div class="goal-heading">
+                <span aria-hidden="true">🎯</span>
+                <h2 id="goal-title">오늘의 목표</h2>
+            </div>
+
+            <form id="goal-form" class="goal-form" novalidate>
+                <label class="sr-only" for="goal-input">나의 목표</label>
+                <input
+                    type="text"
+                    id="goal-input"
+                    name="userGoal"
+                    maxlength="60"
+                    autocomplete="off"
+                    placeholder="이번 목표를 한 줄로 적어보세요">
+
+                <button type="submit" id="goal-save-button" class="goal-save-button">
+                    저장
+                </button>
+            </form>
+
+            <p id="goal-saved-message" class="goal-saved-message" aria-live="polite"></p>
+        </section>
+
+        <!-- ==========================================================
+             [종합실습4 추가 요구사항] 오늘의 한마디를 fetch로 비동기 로드
+             - 성공: data/quotes.json에서 받은 영어 원문 + 한국어 번역 + 저자를 표시
+             - 실패: app.js의 기본 영문·한국어 문구로 대체
+             [종합실습4 UI 개선] 영문 원문 / 한국어 번역 / 저자를 시각적으로 구분하고
+             왼쪽 포인트 선으로 카드 영역을 강조합니다.
+             ========================================================== -->
+        <section class="quote-card" aria-labelledby="quote-title">
+            <p class="quote-tag">TODAY'S QUOTE</p>
+
+            <div class="quote-heading">
+                <span aria-hidden="true">💬</span>
+                <h2 id="quote-title">오늘의 한마디</h2>
+            </div>
+            <blockquote class="quote-body">
+                <p id="quote-text" class="quote-en" aria-live="polite">오늘의 한마디를 불러오는 중입니다...</p>
+                <p id="quote-translation" class="quote-ko"></p>
+                <cite id="quote-author"></cite>
+            </blockquote>
+
+            <!-- [종합실습4 추가 요구사항] 다른 명언 보기 버튼: 클릭 시 fetch를 다시 실행합니다. -->
+            <div class="quote-actions">
+                <button type="button" id="reload-quote-button" class="reload-quote-button">
+                    다른 명언 보기
+                </button>
+            </div>
+        </section>
+
+        <section class="todo-panel" aria-labelledby="todo-title">
+            <h2 id="todo-title" class="section-title">나의 할 일</h2>
+
+            <!-- ======================================================
+                 [종합실습4 필수 요구사항] 추가 버튼 또는 Enter 키로 할 일 추가
+                 [한글 입력 오류 방지] input과 add-button이 모두 form 안에 있어
+                 버튼 클릭과 Enter 입력이 전부 submit 이벤트 하나로 처리됩니다.
+                 [종합실습4 데이터 모델 확장] [사용자 직접 요청]
+                 시간순 정렬 기능을 위해 시간 입력창을 추가했습니다.
+                 ====================================================== -->
+            <form id="todo-form" class="todo-form" novalidate>
+                <label class="sr-only" for="todo-input">새 할 일</label>
+
+                <!-- [사용자 직접 입력] 실제 할 일은 이 입력창에 작성합니다. -->
+                <input
+                    type="text"
+                    id="todo-input"
+                    name="todoText"
+                    maxlength="80"
+                    autocomplete="off"
+                    placeholder="할 일을 입력하세요"
+                    aria-describedby="input-message">
+
+                <label class="sr-only" for="todo-time-input">할 일 시간</label>
+                <input
+                    type="time"
+                    id="todo-time-input"
+                    name="todoTime"
+                    class="todo-time-input"
+                    aria-label="할 일 시간">
+
+                <button type="submit" id="add-button" class="add-button">
+                    추가
+                </button>
+            </form>
+
+            <!-- [종합실습4 필수 요구사항] 빈 값 입력 방지 안내 영역
+                 [종합실습4 접근성] 입력을 다시 시작하면 app.js가 이 문구를 지웁니다. -->
+            <p id="input-message" class="input-message" aria-live="polite"></p>
+
+            <!-- ======================================================
+                 [종합실습4 세부 요구사항] 전체 / 진행중 / 완료 필터
+                 [종합실습4 접근성] 현재 선택된 필터는 aria-pressed로도 전달합니다.
+                 ====================================================== -->
+            <div id="filter-buttons" class="filter-buttons" aria-label="할 일 필터">
+                <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">
+                    전체
+                </button>
+                <button type="button" class="filter-button" data-filter="active" aria-pressed="false">
+                    진행중
+                </button>
+                <button type="button" class="filter-button" data-filter="completed" aria-pressed="false">
+                    완료
+                </button>
+            </div>
+
+            <!-- ======================================================
+                 [종합실습4 세부 요구사항] [이벤트 위임] 이벤트 위임 대상 부모 ul
+                 app.js에서 이 ul에 click 리스너를 단 한 번만 등록합니다.
+                 동적으로 생성되는 체크박스와 삭제 버튼도 같은 리스너로 처리합니다.
+                 [종합실습4 UI 개선] [사용자 직접 요청]
+                 항목을 시간순으로 정렬해 타임라인 점·선으로 표시합니다.
+                 ====================================================== -->
+            <ul id="todo-list" class="todo-list" aria-label="할 일 목록"></ul>
+
+            <!-- ======================================================
+                 [종합실습4 세부 요구사항] 하단 요약: 전체·완료 개수
+                 [종합실습4 추가 요구사항] 남은 할 일 개수, 완료율 진행 막대,
+                 완료 항목 모두 삭제 버튼을 함께 표시합니다.
+                 render() 때마다 updateSummary()에서 갱신합니다.
+                 ====================================================== -->
+            <footer class="todo-summary" aria-live="polite">
+                <div class="summary-counts">
+                    <span>전체 <strong id="total-count">0</strong>개</span>
+                    <span class="summary-divider" aria-hidden="true">·</span>
+                    <span>완료 <strong id="completed-count">0</strong>개</span>
+                    <span class="summary-divider" aria-hidden="true">·</span>
+                    <span>남은 할 일 <strong id="remaining-count">0</strong>개</span>
+                </div>
+
+                <div class="summary-progress">
+                    <div
+                        id="progress-bar"
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                        aria-label="오늘의 완료율">
+                        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                    </div>
+                    <span id="progress-percent" class="progress-percent">완료율 0%</span>
+                </div>
+
+                <button type="button" id="clear-completed-button" class="clear-completed-button" disabled>
+                    완료 항목 모두 삭제
+                </button>
+            </footer>
+        </section>
+    </main>
+
+    <!-- [종합실습4 UI 개선] 저작권 footer -->
+    <!-- [사용자 직접 입력] 제출자 이름이나 연도가 바뀌면 아래 저작권 문구를 수정하세요. -->
+    <footer class="site-footer">
+        <p>
+            <small>
+                © 2026 왕시훈 · HTML · CSS · JavaScript 종합실습
+            </small>
+        </p>
+    </footer>
+
+    <!-- ==============================================================
+         [종합실습4 추가 요구사항] ES 모듈 사용
+         - app.js: 화면, 이벤트, 렌더링, 비동기 로드 담당
+         - storage.js: localStorage 저장/복원 담당
+         주의: file://로 더블클릭하지 말고 Live Server 또는 HTTP 서버로 실행하세요.
+         =============================================================== -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

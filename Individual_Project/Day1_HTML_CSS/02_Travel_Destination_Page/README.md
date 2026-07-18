@@ -64,13 +64,13 @@ https://github.com/sihunwang-skala/SKALA-FRONT
 
 상단 메뉴에는 `position: fixed`와 `z-index`를 적용했습니다. 스크롤을 내려도 메뉴가 화면 위에 유지되며, 메뉴를 누르면 여행 소개, 명소 갤러리, 지도, 먹거리, 여행 팁, 영상 영역으로 이동합니다.
 
-### Flex·Grid와 반응형 화면
+### Flex & Grid와 반응형 화면
 
 명소 갤러리와 맛집 순위 카드는 Grid로 배치했습니다. 먹거리 본문과 여행 팁, 영상과 영상 설명은 화면이 넓을 때 나란히 보이도록 구성했습니다.
 
 화면이 좁아지면 미디어쿼리에서 카드의 열 수를 줄이고, 나란히 있던 영역을 위아래로 배치해 내용이 겹치지 않도록 했습니다.
 
-### hover·transition 효과
+### hover & transition 효과
 
 명소 카드와 음식 카드에 마우스를 올리면 카드가 조금 위로 이동하고 이미지가 확대됩니다. 버튼과 링크에도 hover 효과를 적용해 색상이 자연스럽게 바뀌도록 했습니다.
 
@@ -82,7 +82,7 @@ https://github.com/sihunwang-skala/SKALA-FRONT
 
 ---
 
-## 수업 범위 외에 추가한 부분
+## 더 나아간 부분
 
 ### Google My Maps 여행 지도
 

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<!-- 종합실습 3: 반응형 ANC 헤드폰 상품 갤러리 -->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANC HEADPHONE SHOP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- 상단바 Flexbox + 메뉴 margin-left:auto -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="site-logo" href="#top" aria-label="ANC HEADPHONE SHOP 첫 화면으로 이동">
+                ANC HEADPHONE SHOP
+            </a>
+
+            <!-- 모바일에서는 메뉴를 숨긴다. -->
+            <nav class="main-nav" aria-label="주요 메뉴">
+                <ul class="main-menu">
+                    <li><a href="#top">홈</a></li>
+                    <li><a href="#products">헤드폰</a></li>
+                    <li><a href="#sources">출처</a></li>
+                </ul>
+            </nav>
+
+            <!-- 다크모드 버튼 -->
+            <button
+                type="button"
+                id="themeButton"
+                class="theme-button"
+                aria-pressed="false"
+                aria-label="다크모드로 전환"
+            >
+                🌙 다크
+            </button>
+        </div>
+    </header>
+
+    <main id="top">
+        <!-- 히어로 제목과 부제 순차 등장 애니메이션 -->
+        <section class="hero-section" aria-labelledby="heroTitle">
+            <svg class="hero-wave-decor" viewBox="0 0 800 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <polyline points="0,70.0 20,60.1 40,51.6 60,46.0 80,44.0 100,46.0 120,51.6 140,60.1 160,70.0 180,79.9 200,88.4 220,94.0 240,96.0 260,94.0 280,88.4 300,79.9 320,70.0 340,60.1 360,51.6 380,46.0 400,44.0 420,46.0 440,51.6 460,60.1 480,70.0 500,79.9 520,88.4 540,94.0 560,96.0 580,94.0 600,88.4 620,79.9 640,70.0 660,60.1 680,51.6 700,46.0 720,44.0 740,46.0 760,51.6 780,60.1 800,70.0" />
+                <polyline points="0,122.7 20,120.0 40,123.2 60,131.4 80,142.1 100,152.2 120,158.7 140,159.7 160,154.9 180,145.7 200,134.8 220,125.5 240,120.4 260,121.1 280,127.4 300,137.4 320,148.1 340,156.5 360,160.0 380,157.6 400,150.0 420,139.5 440,129.1 460,121.9 480,120.1 500,124.1 520,132.8 540,143.6 560,153.4 580,159.2 600,159.3 620,153.8 640,144.2 660,133.3 680,124.5 700,120.2 720,121.7 740,128.7 760,139.0 780,149.5 800,157.3" />
+            </svg>
+
+            <div class="hero-inner">
+                <p class="hero-eyebrow">2026년 7월 18일 최신 기준 / PREMIUM ANC HEADPHONES</p>
+
+                <h1 id="heroTitle" class="hero-title">
+                    <span class="hero-title-accent">고요함</span>을 선택하는 헤드폰 갤러리
+                </h1>
+
+                <p class="hero-description">
+                    현재 판매/소개 중인 프리미엄 노이즈 캔슬링 헤드폰 6종을
+                    반응형 상품 카드로 소개합니다.
+                </p>
+
+                <a class="hero-link" href="#products">헤드폰 둘러보기 ↓</a>
+            </div>
+        </section>
+
+        <!-- ANC를 처음 접하는 사용자를 위한 간단한 설명 -->
+        <section class="anc-guide" aria-labelledby="ancGuideTitle">
+            <div class="section-inner anc-guide-inner">
+                <div class="anc-guide-heading">
+                    <p class="section-kicker">EASY AUDIO GUIDE</p>
+                    <h2 id="ancGuideTitle">
+                        Welcome to <br>ANC <span class="anc-guide-subtitle"><a href="https://news.samsungsemiconductor.com/kr/%EB%8C%80%EC%84%B8%EA%B0%80-%EB%90%9C-%EA%B8%B0%EC%88%A0-%EB%85%B8%EC%9D%B4%EC%A6%88-%EC%BA%94%EC%8A%AC%EB%A7%81%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83/" target="_blank" rel="noopener noreferrer">(Active Noise Cancellation)</a></span><br>
+                        HEADPHONE<br>
+                        SHOP
+                    </h2>
+                </div>
+
+                <div class="anc-definition">
+                    <p>
+                        <strong>ANC</strong>는
+                        <strong>Active Noise Cancellation</strong>, 즉
+                        <strong>능동형 소음 제거</strong>의 약자입니다.
+                    </p>
+                    <p>
+                        <strong>헤드폰의 마이크가 주변 소음을 듣고, 그 소음을 줄이는 방향의
+                        반대 소리를 만들어 줄이는 기술입니다.</strong> 대표적으로 비행기 엔진음, 에어컨 소리, 사무실 소음이 
+                        덜 들립니다.
+                    </p>
+                    <p>
+                        <strong>여러분의 헤드폰에서 나오는 음악이나 영상 소리는 잘 들리게 하고
+                        바깥에서 들어오는 소리를 줄여주는 제품을 탐색해 볼까요?</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 상품 카드 6개 + CSS Grid 기본 3열 / 900px 이하 2열 / 600px 이하 1열 -->
+        <section id="products" class="product-section" aria-labelledby="productTitle">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">2026 CURRENT LINEUP</p>
+                        <h2 id="productTitle">프리미엄 ANC 헤드폰</h2>
+                    </div>
+                    <p class="product-count">총 6개 상품</p>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card" id="product-sony-wh-1000xm6">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">BEST / 추천</span>
+                            <a
+                                class="product-image-link"
+                                href="https://store.sony.co.kr/product-view/130258270"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="product-image"
+                                    src="images/sony-wh-1000xm6.webp"
+                                    alt="SONY WH-1000XM6 제품 이미지"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="product-card-body">
+                            <p class="product-category">SONY</p>
+                            <h3 class="product-name">
+                                <a
+                                    href="https://store.sony.co.kr/product-view/130258270"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >WH-1000XM6</a>
+                            </h3>
+                            <p class="product-description">
+                                <a class="term-link term-trigger" href="#term-12-mic">12개의 마이크</a>와
+                                <a class="term-link term-trigger" href="#term-qn3">QN3 프로세서</a>를 사용해 주변 소음을 실시간으로
+                                분석하는 Sony의 플래그십 무선 노이즈 캔슬링 헤드폰입니다.
+                            </p>
+
+                            <dl class="product-specs">
+                                <div>
+                                    <dt>공식 정가</dt>
+                                    <dd>619,000원</dd>
+                                </div>
+                                <div>
+                                    <dt>출시</dt>
+                                    <dd>2025년 6월</dd>
+                                </div>
+                                <div>
+                                    <dt>무게</dt>
+                                    <dd>약 254g</dd>
+                                </div>
+                                <div>
+                                    <dt>배터리</dt>
+                                    <dd>ANC 켬 최대 30시간</dd>
+                                </div>
+                                <div>
+                                    <dt>연결</dt>
+                                    <dd>Bluetooth 5.3</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="feature-tags" aria-label="SONY WH-1000XM6 기술 칩">
+                                <li><a class="spec-chip term-trigger" href="#term-qn3" aria-label="QN3 용어 설명으로 이동">QN3</a></li>
+                                <li><a class="spec-chip term-trigger" href="#term-12-mic" aria-label="12 MIC 용어 설명으로 이동">12 MIC</a></li>
+                            </ul>
+
+                            <div class="product-card-footer">
+                                <a
+                                    class="product-button"
+                                    href="https://store.sony.co.kr/product-view/130258270"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >공식 제품 보기</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="product-bose-qc-ultra-2">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">CUSTOM / 커스터마이징</span>
+                            <a
+                                class="product-image-link"
+                                href="https://www.bose.co.kr/HEADPHONES/?idx=282"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="product-image"
+                                    src="images/bose-qc-ultra-2.png"
+                                    alt="BOSE QuietComfort Ultra Headphones 2세대 제품 이미지"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="product-card-body">
+                            <p class="product-category">BOSE</p>
+                            <h3 class="product-name">
+                                <a
+                                    href="https://www.bose.co.kr/HEADPHONES/?idx=282"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >QuietComfort Ultra Headphones 2세대</a>
+                            </h3>
+                            <p class="product-description">
+                                강력한 <a class="term-link term-trigger" href="#term-anc">노이즈 캔슬링</a>과
+                                <a class="term-link term-trigger" href="#term-customtune">사용자 맞춤 음향 기능</a>, 영상 감상을 위한
+                                <a class="term-link term-trigger" href="#term-cinema-mode">Cinema Mode</a>를 제공하는 프리미엄 오버이어 헤드폰입니다.
+                            </p>
+
+                            <dl class="product-specs">
+                                <div>
+                                    <dt>공식 정가</dt>
+                                    <dd>519,000원</dd>
+                                </div>
+                                <div>
+                                    <dt>출시</dt>
+                                    <dd>2025년 10월</dd>
+                                </div>
+                                <div>
+                                    <dt>무게</dt>
+                                    <dd>260g</dd>
+                                </div>
+                                <div>
+                                    <dt>배터리</dt>
+                                    <dd>최대 30시간</dd>
+                                </div>
+                                <div>
+                                    <dt>연결</dt>
+                                    <dd>Bluetooth 5.4</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="feature-tags" aria-label="BOSE QuietComfort Ultra Headphones 2세대 기술 칩">
+                                <li><a class="spec-chip term-trigger" href="#term-customtune" aria-label="CUSTOMTUNE 용어 설명으로 이동">CUSTOMTUNE</a></li>
+                                <li><a class="spec-chip term-trigger" href="#term-cinema-mode" aria-label="CINEMA MODE 용어 설명으로 이동">CINEMA MODE</a></li>
+                            </ul>
+
+                            <div class="product-card-footer">
+                                <a
+                                    class="product-button"
+                                    href="https://www.bose.co.kr/HEADPHONES/?idx=282"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >공식 제품 보기</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="product-sennheiser-momentum-5">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">SOUND / 음질</span>
+                            <a
+                                class="product-image-link"
+                                href="https://kr.sennheiser-hearing.com/product/%EB%AA%A8%EB%A9%98%ED%85%80-5-%EC%99%80%EC%9D%B4%EC%96%B4%EB%A6%AC%EC%8A%A4/688/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="product-image"
+                                    src="images/sennheiser-momentum-5.webp"
+                                    alt="SENNHEISER MOMENTUM 5 Wireless 제품 이미지"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="product-card-body">
+                            <p class="product-category">SENNHEISER</p>
+                            <h3 class="product-name">
+                                <a
+                                    href="https://kr.sennheiser-hearing.com/product/%EB%AA%A8%EB%A9%98%ED%85%80-5-%EC%99%80%EC%9D%B4%EC%96%B4%EB%A6%AC%EC%8A%A4/688/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >MOMENTUM 5 Wireless</a>
+                            </h3>
+                            <p class="product-description">
+                                42mm 다이내믹 드라이버와
+                                <a class="term-link term-trigger" href="#term-hybrid-anc">8마이크 하이브리드 ANC</a>, 사용자 교체형
+                                배터리를 적용한 음악 감상 중심의 무선 헤드폰입니다.
+                            </p>
+
+                            <dl class="product-specs">
+                                <div>
+                                    <dt>공식 정가</dt>
+                                    <dd>599,000원</dd>
+                                </div>
+                                <div>
+                                    <dt>출시</dt>
+                                    <dd>2026년 6월</dd>
+                                </div>
+                                <div>
+                                    <dt>무게</dt>
+                                    <dd>약 290g</dd>
+                                </div>
+                                <div>
+                                    <dt>배터리</dt>
+                                    <dd>ANC 켬 최대 57시간</dd>
+                                </div>
+                                <div>
+                                    <dt>연결</dt>
+                                    <dd>Bluetooth 5.4</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="feature-tags" aria-label="SENNHEISER MOMENTUM 5 Wireless 기술 칩">
+                                <li><a class="spec-chip term-trigger" href="#term-hybrid-anc" aria-label="8 MIC ANC 용어 설명으로 이동">8 MIC ANC</a></li>
+                                <li><a class="spec-chip term-trigger" href="#term-aptx-lossless" aria-label="aptX LOSSLESS 용어 설명으로 이동">aptX LOSSLESS</a></li>
+                            </ul>
+
+                            <div class="product-card-footer">
+                                <a
+                                    class="product-button"
+                                    href="https://kr.sennheiser-hearing.com/product/%EB%AA%A8%EB%A9%98%ED%85%80-5-%EC%99%80%EC%9D%B4%EC%96%B4%EB%A6%AC%EC%8A%A4/688/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >공식 제품 보기</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="product-jbl-tour-one-m3">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">ANC / 소음 제거</span>
+                            <a
+                                class="product-image-link"
+                                href="https://global.jbl.com/over-ear-headphones/TOUR-ONE-M3-TX.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="product-image"
+                                    src="images/jbl-tour-one-m3.webp"
+                                    alt="JBL Tour One M3 Smart Tx 제품 이미지"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="product-card-body">
+                            <p class="product-category">JBL</p>
+                            <h3 class="product-name">
+                                <a
+                                    href="https://global.jbl.com/over-ear-headphones/TOUR-ONE-M3-TX.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >Tour One M3 Smart Tx</a>
+                            </h3>
+                            <p class="product-description">
+                                <a class="term-link term-trigger" href="#term-anc-2">True Adaptive Noise Cancelling 2.0</a>과 화면이 달린
+                                <a class="term-link term-trigger" href="#term-smart-tx">Smart Tx</a> 송신기를
+                                통해 여러 오디오 기기를 연결할 수 있는 무선 헤드폰입니다.
+                            </p>
+
+                            <dl class="product-specs">
+                                <div>
+                                    <dt>공식 정가</dt>
+                                    <dd>공식 출시가 68만원</dd>
+                                </div>
+                                <div>
+                                    <dt>출시</dt>
+                                    <dd>2025년 4월</dd>
+                                </div>
+                                <div>
+                                    <dt>무게</dt>
+                                    <dd>278g</dd>
+                                </div>
+                                <div>
+                                    <dt>배터리</dt>
+                                    <dd>ANC 켬 최대 40시간</dd>
+                                </div>
+                                <div>
+                                    <dt>연결</dt>
+                                    <dd>Bluetooth 5.3 LE Audio</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="feature-tags" aria-label="JBL Tour One M3 Smart Tx 기술 칩">
+                                <li><a class="spec-chip term-trigger" href="#term-anc-2" aria-label="ANC 2.0 용어 설명으로 이동">ANC 2.0</a></li>
+                                <li><a class="spec-chip term-trigger" href="#term-smart-tx" aria-label="SMART TX 용어 설명으로 이동">SMART TX</a></li>
+                            </ul>
+
+                            <div class="product-card-footer">
+                                <a
+                                    class="product-button"
+                                    href="https://global.jbl.com/over-ear-headphones/TOUR-ONE-M3-TX.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >공식 제품 보기</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="product-apple-airpods-max-2">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">APPLE / 연동</span>
+                            <a
+                                class="product-image-link"
+                                href="https://www.apple.com/kr/airpods-max/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="product-image"
+                                    src="images/apple-airpods-max-2.png"
+                                    alt="APPLE AirPods Max 2 제품 이미지"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="product-card-body">
+                            <p class="product-category">APPLE</p>
+                            <h3 class="product-name">
+                                <a
+                                    href="https://www.apple.com/kr/airpods-max/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >AirPods Max 2</a>
+                            </h3>
+                            <p class="product-description">
+                                <a class="term-link term-trigger" href="#term-h2">H2 칩</a>과 8개의 ANC용 마이크를 기반으로 적응형 오디오와
+                                <a class="term-link term-trigger" href="#term-spatial-audio">개인 맞춤형 공간 음향</a>을 제공하는 Apple 오버이어 헤드폰입니다.
+                            </p>
+
+                            <dl class="product-specs">
+                                <div>
+                                    <dt>공식 정가</dt>
+                                    <dd>849,000원</dd>
+                                </div>
+                                <div>
+                                    <dt>출시</dt>
+                                    <dd>2026년 4월</dd>
+                                </div>
+                                <div>
+                                    <dt>무게</dt>
+                                    <dd>386.2g</dd>
+                                </div>
+                                <div>
+                                    <dt>배터리</dt>
+                                    <dd>ANC 켬 최대 20시간</dd>
+                                </div>
+                                <div>
+                                    <dt>연결</dt>
+                                    <dd>Bluetooth 5.3</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="feature-tags" aria-label="APPLE AirPods Max 2 기술 칩">
+                                <li><a class="spec-chip term-trigger" href="#term-h2" aria-label="H2 용어 설명으로 이동">H2</a></li>
+                                <li><a class="spec-chip term-trigger" href="#term-spatial-audio" aria-label="SPATIAL AUDIO 용어 설명으로 이동">SPATIAL AUDIO</a></li>
+                            </ul>
+
+                            <div class="product-card-footer">
+                                <a
+                                    class="product-button"
+                                    href="https://www.apple.com/kr/airpods-max/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >공식 제품 보기</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="product-bw-px8-s2">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">PREMIUM / 고급형</span>
+                            <a
+                                class="product-image-link"
+                                href="https://bowerswilkinskorea.co.kr/Headphones/?idx=53"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    class="product-image"
+                                    src="images/bw-px8-s2.webp"
+                                    alt="BOWERS &amp; WILKINS Px8 S2 제품 이미지"
+                                >
+                            </a>
+                        </div>
+
+                        <div class="product-card-body">
+                            <p class="product-category">BOWERS &amp; WILKINS</p>
+                            <h3 class="product-name">
+                                <a
+                                    href="https://bowerswilkinskorea.co.kr/Headphones/?idx=53"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >Px8 S2</a>
+                            </h3>
+                            <p class="product-description">
+                                <a class="term-link term-trigger" href="#term-carbon-driver">40mm 카본 콘 드라이버</a>와
+                                <a class="term-link term-trigger" href="#term-mic">8개의 마이크</a>,
+                                <a class="term-link term-trigger" href="#term-aptx-lossless">aptX Lossless</a>를 지원하는
+                                Bowers &amp; Wilkins의 플래그십 무선 헤드폰입니다.
+                            </p>
+
+                            <dl class="product-specs">
+                                <div>
+                                    <dt>공식 정가</dt>
+                                    <dd>1,139,000원</dd>
+                                </div>
+                                <div>
+                                    <dt>출시</dt>
+                                    <dd>2025년 9월</dd>
+                                </div>
+                                <div>
+                                    <dt>무게</dt>
+                                    <dd>310g</dd>
+                                </div>
+                                <div>
+                                    <dt>배터리</dt>
+                                    <dd>최대 30시간</dd>
+                                </div>
+                                <div>
+                                    <dt>연결</dt>
+                                    <dd>Bluetooth 5.3</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="feature-tags" aria-label="BOWERS &amp; WILKINS Px8 S2 기술 칩">
+                                <li><a class="spec-chip term-trigger" href="#term-carbon-driver" aria-label="CARBON 40MM 용어 설명으로 이동">CARBON 40MM</a></li>
+                                <li><a class="spec-chip term-trigger" href="#term-aptx-lossless" aria-label="aptX LOSSLESS 용어 설명으로 이동">aptX LOSSLESS</a></li>
+                            </ul>
+
+                            <div class="product-card-footer">
+                                <a
+                                    class="product-button"
+                                    href="https://bowerswilkinskorea.co.kr/Headphones/?idx=53"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >공식 제품 보기</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 과제 요구사항은 CHECKLIST.txt와 코드 주석에서 확인할 수 있다. -->
+
+        <!-- ANC 작동 원리를 설명하는 기술 노트 -->
+        <section id="tech-note" class="tech-note-section" aria-labelledby="techNoteTitle">
+            <div class="section-inner">
+                <div class="tech-note-heading">
+                    <p class="section-kicker">TECH NOTE</p>
+                    <h2 id="techNoteTitle">소음을 소리로 줄이는 기술</h2>
+                    <p class="tech-note-subtitle">Active Noise Cancellation</p>
+                </div>
+
+                <div class="tech-abstract">
+                    <div class="tech-abstract-row">
+                        <span class="tech-abstract-label">ABSTRACT</span>
+                        <p>
+                            ANC는 마이크와 프로세서, 헤드폰 드라이버를 이용해
+                            주변 소음과 반대되는 음파를 생성하는 능동형 소음 저감 기술입니다.
+                        </p>
+                    </div>
+                    <div class="tech-abstract-row">
+                        <span class="tech-abstract-label">KEYWORDS</span>
+                        <p class="tech-keywords">ANC / Anti-noise / Microphone / Processor / Destructive Interference</p>
+                    </div>
+                </div>
+
+                <ol class="tech-steps">
+                    <li class="tech-step">
+                        <span class="tech-step-icon" aria-hidden="true">🎙️</span>
+                        <h3 class="tech-step-title">소음 감지</h3>
+                        <p class="tech-step-desc">외부 마이크가 주변의 소음을 전기 신호로 수집합니다.</p>
+                    </li>
+                    <li class="tech-step">
+                        <span class="tech-step-icon" aria-hidden="true">🧠</span>
+                        <h3 class="tech-step-title">파형 분석</h3>
+                        <p class="tech-step-desc">프로세서가 입력된 소리의 크기와 주파수, 위상을 분석합니다.</p>
+                    </li>
+                    <li class="tech-step">
+                        <span class="tech-step-icon" aria-hidden="true">🔊</span>
+                        <h3 class="tech-step-title">반대 음파 생성</h3>
+                        <p class="tech-step-desc">감지한 소음과 반대되는 위상의 음파를 헤드폰 드라이버로 출력합니다.</p>
+                    </li>
+                    <li class="tech-step">
+                        <span class="tech-step-icon" aria-hidden="true">🎧</span>
+                        <h3 class="tech-step-title">소음 감소</h3>
+                        <p class="tech-step-desc">원래 소음과 반대 음파가 겹치면서 귀에 도달하는 소음이 줄어듭니다.</p>
+                    </li>
+                </ol>
+
+                <div class="tech-diagram">
+                    <p class="tech-diagram-caption">세 파형으로 보는 상쇄 간섭 (직접 제작한 다이어그램)</p>
+
+                    <svg class="tech-diagram-svg" viewBox="0 0 600 220" role="img" aria-labelledby="techDiagramTitle techDiagramDesc">
+                        <title id="techDiagramTitle">ANC 상쇄 간섭 파형 다이어그램</title>
+                        <desc id="techDiagramDesc">
+                            원래 소음 n(t)와 반대 음파 a(t)가 만나 귀에 도달하는 소음이
+                            n(t) + a(t)가 0에 가깝게 줄어드는 모습을 세 개의 파형으로 표현합니다.
+                        </desc>
+
+                        <line class="tech-wave-baseline" x1="20" y1="180" x2="580" y2="180" />
+
+                        <polyline class="tech-wave tech-wave-noise" points="20.0,40.0 28.0,35.2 36.0,30.8 44.0,27.0 52.0,24.1 60.0,22.5 68.0,22.0 76.0,22.9 84.0,25.0 92.0,28.2 100.0,32.2 108.0,36.8 116.0,41.6 124.0,46.3 132.0,50.6 140.0,54.1 148.0,56.6 156.0,57.8 164.0,57.8 172.0,56.6 180.0,54.1 188.0,50.6 196.0,46.3 204.0,41.6 212.0,36.8 220.0,32.2 228.0,28.2 236.0,25.0 244.0,22.9 252.0,22.0 260.0,22.5 268.0,24.1 276.0,27.0 284.0,30.8 292.0,35.2 300.0,40.0 308.0,44.8 316.0,49.2 324.0,53.0 332.0,55.9 340.0,57.5 348.0,58.0 356.0,57.1 364.0,55.0 372.0,51.8 380.0,47.8 388.0,43.2 396.0,38.4 404.0,33.7 412.0,29.4 420.0,25.9 428.0,23.4 436.0,22.2 444.0,22.2 452.0,23.4 460.0,25.9 468.0,29.4 476.0,33.7 484.0,38.4 492.0,43.2 500.0,47.8 508.0,51.8 516.0,55.0 524.0,57.1 532.0,58.0 540.0,57.5 548.0,55.9 556.0,53.0 564.0,49.2 572.0,44.8 580.0,40.0" />
+
+                        <polyline class="tech-wave tech-wave-anti" points="20.0,110.0 28.0,114.8 36.0,119.2 44.0,123.0 52.0,125.9 60.0,127.5 68.0,128.0 76.0,127.1 84.0,125.0 92.0,121.8 100.0,117.8 108.0,113.2 116.0,108.4 124.0,103.7 132.0,99.4 140.0,95.9 148.0,93.4 156.0,92.2 164.0,92.2 172.0,93.4 180.0,95.9 188.0,99.4 196.0,103.7 204.0,108.4 212.0,113.2 220.0,117.8 228.0,121.8 236.0,125.0 244.0,127.1 252.0,128.0 260.0,127.5 268.0,125.9 276.0,123.0 284.0,119.2 292.0,114.8 300.0,110.0 308.0,105.2 316.0,100.8 324.0,97.0 332.0,94.1 340.0,92.5 348.0,92.0 356.0,92.9 364.0,95.0 372.0,98.2 380.0,102.2 388.0,106.8 396.0,111.6 404.0,116.3 412.0,120.6 420.0,124.1 428.0,126.6 436.0,127.8 444.0,127.8 452.0,126.6 460.0,124.1 468.0,120.6 476.0,116.3 484.0,111.6 492.0,106.8 500.0,102.2 508.0,98.2 516.0,95.0 524.0,92.9 532.0,92.0 540.0,92.5 548.0,94.1 556.0,97.0 564.0,100.8 572.0,105.2 580.0,110.0" />
+
+                        <polyline class="tech-wave tech-wave-result" points="20.0,180.0 28.0,178.9 36.0,177.9 44.0,177.1 52.0,176.5 60.0,176.1 68.0,176.0 76.0,176.2 84.0,176.7 92.0,177.4 100.0,178.3 108.0,179.3 116.0,180.4 124.0,181.4 132.0,182.4 140.0,183.1 148.0,183.7 156.0,184.0 164.0,184.0 172.0,183.7 180.0,183.1 188.0,182.4 196.0,181.4 204.0,180.4 212.0,179.3 220.0,178.3 228.0,177.4 236.0,176.7 244.0,176.2 252.0,176.0 260.0,176.1 268.0,176.5 276.0,177.1 284.0,177.9 292.0,178.9 300.0,180.0 308.0,181.1 316.0,182.1 324.0,182.9 332.0,183.5 340.0,183.9 348.0,184.0 356.0,183.8 364.0,183.3 372.0,182.6 380.0,181.7 388.0,180.7 396.0,179.6 404.0,178.6 412.0,177.6 420.0,176.9 428.0,176.3 436.0,176.0 444.0,176.0 452.0,176.3 460.0,176.9 468.0,177.6 476.0,178.6 484.0,179.6 492.0,180.7 500.0,181.7 508.0,182.6 516.0,183.3 524.0,183.8 532.0,184.0 540.0,183.9 548.0,183.5 556.0,182.9 564.0,182.1 572.0,181.1 580.0,180.0" />
+                    </svg>
+
+                    <ul class="tech-diagram-legend">
+                        <li><span class="tech-legend-swatch tech-legend-noise" aria-hidden="true"></span>원래 소음 <code>n(t)</code></li>
+                        <li><span class="tech-legend-swatch tech-legend-anti" aria-hidden="true"></span>반대 음파 <code>a(t) &#8776; -n(t)</code></li>
+                        <li><span class="tech-legend-swatch tech-legend-result" aria-hidden="true"></span>결과 <code>n(t) + a(t) &#8776; 0</code></li>
+                    </ul>
+                </div>
+
+                <div class="tech-compare">
+                    <div class="tech-compare-item">
+                        <p class="tech-compare-label">ANC</p>
+                        <p>마이크와 프로세서가 반대 음파를 만들어 소음을 능동적으로 줄이는 방식</p>
+                    </div>
+                    <div class="tech-compare-item">
+                        <p class="tech-compare-label">PNC</p>
+                        <p>이어패드와 이어팁이 귀를 물리적으로 막아 소음을 차단하는 방식</p>
+                    </div>
+                </div>
+
+                <div class="tech-limitations">
+                    <p class="tech-limitations-label">LIMITATIONS</p>
+                    <p>
+                        ANC는 기차, 비행기 엔진, 에어컨처럼
+                        비교적 일정하게 이어지는 저주파 소음에 효과적입니다.
+                    </p>
+                    <p>
+                        사람의 말소리와 갑작스럽게 발생하는 높은 주파수의 소리는
+                        상대적으로 줄이기 어렵습니다.
+                    </p>
+                    <p>
+                        제품의 착용 상태, 이어패드 밀폐 정도, 주변 환경에 따라
+                        실제 소음 감소 효과가 달라질 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 상품 설명에 사용한 기술 용어 정리 -->
+        <section id="glossary" class="glossary-section" aria-labelledby="glossaryTitle">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">TERMS</p>
+                        <h2 id="glossaryTitle">용어 안내</h2>
+                    </div>
+                </div>
+
+                <p class="glossary-intro">
+                    파란색 링크나 기술 버튼을 누르면 필요한 용어로 바로 이동합니다.
+                </p>
+
+                <dl class="glossary-list">
+                    <div class="glossary-item" id="term-anc">
+                        <dt>ANC</dt>
+                        <dd>
+                            <p>Active Noise Cancellation의 약자다.</p>
+                            <p>헤드폰의 마이크가 주변 소음을 감지하고 소음을 줄이는 신호를 만들어 외부 소리를 낮추는 기술이다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-mic">
+                        <dt>MIC</dt>
+                        <dd>
+                            <p>Microphone의 줄임말이다.</p>
+                            <p>주변 소음 감지, ANC 처리, 통화 음성 수집 등에 사용된다.</p>
+                            <p>제조사마다 마이크를 세는 기준이 달라 숫자만으로 성능을 비교할 수 없다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-qn3">
+                        <dt>QN3</dt>
+                        <dd>
+                            <p>Sony가 WH-1000XM6에 적용한 HD 노이즈 캔슬링 프로세서다.</p>
+                            <p>12개 마이크의 정보를 실시간으로 처리한다.</p>
+                            <p class="glossary-source">공식 출처: <a href="https://www.sony.co.kr/headphones/products/wh-1000xm6/developer-interview" target="_blank" rel="noopener noreferrer">Sony 개발자 인터뷰 페이지</a></p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-12-mic">
+                        <dt>12 MIC</dt>
+                        <dd>
+                            <p>MIC는 Microphone의 줄임말입니다.</p>
+                            <p>Sony WH-1000XM6는 총 12개의 마이크를 사용해 주변 소음과 착용 상태를 감지하고 노이즈 캔슬링 처리를 조절합니다.</p>
+                            <p>마이크 수만으로 제품의 전체 성능을 판단할 수는 없습니다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-customtune">
+                        <dt>CustomTune</dt>
+                        <dd>
+                            <p>Bose가 사용자의 귀 형태와 음향 특성을 측정해 소리와 노이즈 캔슬링을 자동으로 조절하는 맞춤형 음향 기술입니다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-cinema-mode">
+                        <dt>Cinema Mode</dt>
+                        <dd>
+                            <p>영상의 대사와 배경음, 공간감을 조절해 영화와 영상 감상에 적합한 음향을 제공하는 Bose 기능입니다.</p>
+                            <p class="glossary-source">공식 출처: <a href="https://www.bose.com/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html" target="_blank" rel="noopener noreferrer">Bose 공식 제품 페이지</a></p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-hybrid-anc">
+                        <dt>8 MIC Hybrid ANC</dt>
+                        <dd>
+                            <p>이어컵 안쪽과 바깥쪽의 마이크를 함께 사용해 외부 소음과 귀 주변의 소리를 분석하는 하이브리드 노이즈 캔슬링 방식입니다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-aptx-lossless">
+                        <dt>aptX Lossless</dt>
+                        <dd>
+                            <p>호환 기기와 연결 조건에서 무손실에 가까운 Bluetooth 오디오 전송을 지원하는 Qualcomm의 오디오 코덱 기술입니다.</p>
+                            <p class="glossary-source">공식 출처: <a href="https://us.sennheiser-hearing.com/products/momentum-5-wireless" target="_blank" rel="noopener noreferrer">Sennheiser 공식 제품 페이지</a></p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-anc-2">
+                        <dt>ANC 2.0</dt>
+                        <dd>
+                            <p>JBL의 True Adaptive Noise Cancelling 2.0 기술입니다.</p>
+                            <p>여러 마이크로 주변 소음을 실시간으로 감지하고 사용 환경에 맞춰 노이즈 캔슬링 강도를 조절합니다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-smart-tx">
+                        <dt>Smart Tx</dt>
+                        <dd>
+                            <p>JBL Tour One M3 Smart Tx와 함께 사용하는 터치스크린 무선 오디오 송신기입니다.</p>
+                            <p>USB-C 또는 3.5mm 오디오 기기를 헤드폰에 연결하고 화면에서 재생과 주요 설정을 조작할 수 있습니다.</p>
+                            <p class="glossary-source">공식 출처: <a href="https://global.jbl.com/over-ear-headphones/TOUR-ONE-M3-TX.html" target="_blank" rel="noopener noreferrer">JBL 공식 제품 페이지</a></p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-h2">
+                        <dt>H2</dt>
+                        <dd>
+                            <p>Apple의 컴퓨테이셔널 오디오 칩입니다.</p>
+                            <p>노이즈 캔슬링, 음향 처리, 적응형 오디오와 공간 음향 기능을 처리합니다.</p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-spatial-audio">
+                        <dt>Spatial Audio</dt>
+                        <dd>
+                            <p>소리가 사용자의 앞과 주변 공간에서 들리는 것처럼 표현하는 공간 음향 기술입니다.</p>
+                            <p>지원 콘텐츠와 기기에서는 머리 움직임을 반영하는 동적 머리 추적 기능도 사용할 수 있습니다.</p>
+                            <p class="glossary-source">공식 출처: <a href="https://www.apple.com/kr/airpods-max/specs/" target="_blank" rel="noopener noreferrer">Apple 공식 규격 페이지</a></p>
+                        </dd>
+                    </div>
+
+                    <div class="glossary-item" id="term-carbon-driver">
+                        <dt>40mm Carbon Cone Driver</dt>
+                        <dd>
+                            <p>40mm 크기의 카본 소재 진동판을 사용한 드라이버입니다.</p>
+                            <p>진동판의 강성을 높여 소리의 왜곡을 줄이고 세밀한 음향 표현을 목표로 합니다.</p>
+                            <p class="glossary-source">공식 출처: <a href="https://www.bowerswilkins.com/en-gb/product/over-ear-headphones/px8-s2/FP45365P.html" target="_blank" rel="noopener noreferrer">Bowers &amp; Wilkins 공식 제품 페이지</a></p>
+                        </dd>
+                    </div>
+                </dl>
+
+                <p class="price-notice">
+                    가격은 2026년 7월 18일 제조사 공식 페이지에 표시된 정가 또는 공식 출시가를 기준으로 작성했습니다.
+                    할인, 쿠폰, 환율, 판매처에 따라 실제 가격은 달라질 수 있습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 제품 정보와 이미지 출처 -->
+        <section id="sources" class="source-section" aria-labelledby="sourceTitle">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">SOURCES</p>
+                        <h2 id="sourceTitle">제품 정보 및 이미지 출처</h2>
+                    </div>
+                </div>
+
+                <details class="source-details">
+                    <summary>제품 정보 및 이미지 출처 보기</summary>
+
+                    <p class="source-notice">
+                    제품명과 주요 특징은 2026년 7월 18일 각 제조사 공식 페이지를 기준으로 확인했습니다.
+                    </p>
+
+                    <ol class="source-list">
+                    <li class="source-item">
+                        <strong>Sony WH-1000XM6</strong>
+                        <span>
+                            <a href="https://www.sony.co.kr/headphones/products/wh-1000xm6" target="_blank" rel="noopener noreferrer">제품 정보: 소니코리아 공식</a>
+                            <a href="https://i5.walmartimages.com/seo/Sony-WH-1000XM6-Noise-Canceling-Wireless-Over-Ear-Headphones-Platinum-Silver-International-Version_18a42653-d737-41e3-a6c2-9283ed344704.019ac811d07858cb2d731bce68597c51.jpeg?odnBg=FFFFFF&amp;odnHeight=573&amp;odnWidth=573" target="_blank" rel="noopener noreferrer">이미지: Walmart 상품 이미지</a>
+                        </span>
+                    </li>
+
+                    <li class="source-item">
+                        <strong>Bose QC Ultra Headphones 2세대</strong>
+                        <span>
+                            <a href="https://www.bose.co.kr/shop_view/?idx=282" target="_blank" rel="noopener noreferrer">제품 정보: Bose Korea 공식</a>
+                            <a href="https://cdn.imweb.me/upload/S202206294c0a2cc6190f4/04dc7a1ab8087.png" target="_blank" rel="noopener noreferrer">이미지: Bose Korea 공식</a>
+                        </span>
+                    </li>
+
+                    <li class="source-item">
+                        <strong>Sennheiser MOMENTUM 5 Wireless</strong>
+                        <span>
+                            <a href="https://global.sennheiser-hearing.com/products/momentum-5-wireless" target="_blank" rel="noopener noreferrer">제품 정보: Sennheiser 공식</a>
+                            <a href="https://global.sennheiser-hearing.com/cdn/shop/files/M5_PDP_FC01.png?v=1782829126" target="_blank" rel="noopener noreferrer">이미지: Sennheiser 공식</a>
+                        </span>
+                    </li>
+
+                    <li class="source-item">
+                        <strong>JBL Tour One M3 Smart Tx</strong>
+                        <span>
+                            <a href="https://www.jbl.com/TOUR-ONE-M3-TX.html" target="_blank" rel="noopener noreferrer">제품 정보: JBL 공식</a>
+                            <a href="https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw101530dd/LS_JBL_Tour_One_M3-Smart-Tx_Product-Image_Hero_Mocha_Friends.png?sh=535&amp;sw=535" target="_blank" rel="noopener noreferrer">이미지: JBL 공식</a>
+                        </span>
+                    </li>
+
+                    <li class="source-item">
+                        <strong>Apple AirPods Max 2</strong>
+                        <span>
+                            <a href="https://www.apple.com/kr/airpods/compare/" target="_blank" rel="noopener noreferrer">제품 정보: Apple 공식</a>
+                            <a href="https://www.apple.com/v/airpods-max/k/images/overview/contrast/airpods_max_midnight__ddy8oa1y3y4i_large.png" target="_blank" rel="noopener noreferrer">이미지: Apple 공식</a>
+                        </span>
+                    </li>
+
+                    <li class="source-item">
+                        <strong>Bowers &amp; Wilkins Px8 S2</strong>
+                        <span>
+                            <a href="https://www.bowerswilkins.com/en/product/over-ear-headphones/px8-s2/FP45365P.html" target="_blank" rel="noopener noreferrer">제품 정보: Bowers &amp; Wilkins 공식</a>
+                            <a href="https://www.ultrasound.co.za/cdn/shop/files/BW_Px8S2PDP_BuyStack_1116100-4-min.webp?v=1765355299&amp;width=2048" target="_blank" rel="noopener noreferrer">이미지: Ultra Sound &amp; Vision 상품 이미지</a>
+                        </span>
+                    </li>
+
+                    <li class="source-item">
+                        <strong>ANC 작동 원리 참고</strong>
+                        <span>
+                            <a href="https://news.samsungsemiconductor.com/kr/%EB%8C%80%EC%84%B8%EA%B0%80-%EB%90%9C-%EA%B8%B0%EC%88%A0-%EB%85%B8%EC%9D%B4%EC%A6%88-%EC%BA%94%EC%8A%AC%EB%A7%81%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83/" target="_blank" rel="noopener noreferrer">삼성전자 반도체 뉴스룸, 대세가 된 기술 노이즈 캔슬링의 모든 것</a>
+                        </span>
+                        <p class="source-note">이 자료는 ANC의 기본 작동 원리를 참고한 출처이며, 이 페이지에 소개된 상품의 최신 사양 출처는 아닙니다.</p>
+                    </li>
+                    </ol>
+
+                    <p class="copyright-note">
+                        ※ 이미지의 권리는 각 출처에 있습니다. 수업 과제의 출처 표기용으로 사용했으며,
+                        외부 공개나 상업적 사용 전에는 각 사이트의 이미지 이용 조건을 다시 확인해야 합니다.
+                    </p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-inner footer-inner">
+            <p>© 2026 왕시훈. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 브라우저에서 실행되는 ANC 안내 채팅 -->
+    <button
+        type="button"
+        id="agent-button"
+        class="agent-button"
+        aria-label="ANC Headphone Shop AI Agent 열기"
+    >
+        🎧 ANC AI
+    </button>
+
+    <div id="agent-panel" class="agent-panel" role="dialog" aria-labelledby="agentPanelTitle" hidden>
+        <header class="agent-panel-header">
+            <div class="agent-panel-heading">
+                <h2 id="agentPanelTitle">ANC Headphone Shop AI Agent</h2>
+                <p class="agent-status" id="agent-status">모델을 아직 시작하지 않았습니다</p>
+            </div>
+            <div class="agent-panel-controls">
+                <button type="button" id="agent-minimize" class="agent-icon-button" aria-label="ANC Headphone Shop AI Agent 최소화">
+                    최소화
+                </button>
+                <button type="button" id="agent-close" class="agent-icon-button" aria-label="ANC Headphone Shop AI Agent 닫기">
+                    닫기
+                </button>
+            </div>
+        </header>
+
+        <!-- 모델 시작 전 안내 -->
+        <div class="agent-intro" id="agent-intro">
+            <h3>브라우저에서 실행되는 ANC AI</h3>
+            <p>
+                AI 모델은 사용자의 브라우저에서 실행됩니다.
+                질문은 외부 AI 서버로 전송되지 않습니다.
+                처음 실행할 때 모델 파일을 준비하는 시간이 필요합니다.
+            </p>
+            <button type="button" id="agent-start" class="agent-primary-button">
+                AI 모델 시작
+            </button>
+            <p class="agent-inline-message" id="agent-support-message" hidden></p>
+        </div>
+
+        <!-- 모델 준비 상태 -->
+        <div class="agent-loading" id="agent-loading" hidden>
+            <p class="agent-loading-title">AI 모델 준비 중</p>
+            <div
+                class="agent-progress"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="agent-progress"
+            >
+                <div class="agent-progress-fill" id="agent-progress-fill"></div>
+            </div>
+            <p class="agent-progress-number" id="agent-progress-number">0%</p>
+            <p class="agent-loading-note" id="agent-loading-note">
+                처음 실행할 때는 시간이 조금 걸릴 수 있습니다.
+            </p>
+        </div>
+
+        <!-- 채팅 화면 -->
+        <div class="agent-chat" id="agent-chat" hidden>
+            <div class="agent-messages" id="agent-messages" aria-live="polite"></div>
+
+            <div class="agent-suggestions" id="agent-suggestions">
+                <button type="button" class="agent-suggestion-button">가장 가벼운 제품은?</button>
+                <button type="button" class="agent-suggestion-button">배터리가 긴 제품은?</button>
+                <button type="button" class="agent-suggestion-button">ANC가 뭐야?</button>
+                <button type="button" class="agent-suggestion-button">50만 원대 제품은?</button>
+                <button type="button" class="agent-suggestion-button">Smart Tx가 뭐야?</button>
+            </div>
+
+            <form class="agent-input-form" id="agent-input-form">
+                <textarea
+                    id="agent-input"
+                    class="agent-input"
+                    placeholder="헤드폰이나 ANC 기술에 대해 질문해 주세요."
+                    rows="2"
+                    disabled
+                ></textarea>
+
+                <div class="agent-input-actions">
+                    <button type="button" id="agent-clear" class="agent-ghost-button">
+                        대화 지우기
+                    </button>
+                    <button type="submit" id="agent-send" class="agent-primary-button" disabled>
+                        보내기
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <p class="agent-disclaimer">
+            이 AI는 현재 페이지에 정리된 상품 정보와 ANC 기술 자료를 바탕으로 답합니다.
+            실시간 가격과 재고는 각 제조사 공식 페이지에서 확인해 주세요.
+        </p>
+    </div>
+
+    <script type="module" src="./script/ancAgent.js"></script>
+</body>
+</html>

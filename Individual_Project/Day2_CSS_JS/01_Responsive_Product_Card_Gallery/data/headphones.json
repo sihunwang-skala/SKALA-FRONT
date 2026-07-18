@@ -1,0 +1,216 @@
+{
+    "priceBaseDate": "2026년 7월 18일",
+    "pageGuide": "상품 카드는 상단 메뉴의 헤드폰 링크나 스크롤로 볼 수 있고, 카드의 사진이나 제품명을 누르면 제조사 공식 사이트가 새 탭으로 열립니다. 설명문 속 파란 밑줄 용어와 카드 안의 둥근 기술 버튼을 누르면 페이지 아래 용어 안내로 이동합니다. 출처 영역은 기본적으로 접혀 있으며 버튼을 눌러야 펼쳐집니다.",
+    "ancNote": {
+        "title": "소음을 소리로 줄이는 기술",
+        "englishTitle": "Active Noise Cancellation",
+        "abstract": "ANC는 마이크와 프로세서, 헤드폰 드라이버를 이용해 주변 소음과 반대되는 음파를 생성하는 능동형 소음 저감 기술입니다.",
+        "keywords": ["ANC", "Anti-noise", "Microphone", "Processor", "Destructive Interference"],
+        "steps": [
+            { "title": "소음 감지", "description": "외부 마이크가 주변의 소음을 전기 신호로 수집합니다." },
+            { "title": "파형 분석", "description": "프로세서가 입력된 소리의 크기와 주파수, 위상을 분석합니다." },
+            { "title": "반대 음파 생성", "description": "감지한 소음과 반대되는 위상의 음파를 헤드폰 드라이버로 출력합니다." },
+            { "title": "소음 감소", "description": "원래 소음과 반대 음파가 겹치면서 귀에 도달하는 소음이 줄어듭니다." }
+        ],
+        "ancVsPnc": {
+            "anc": "마이크와 프로세서가 반대 음파를 만들어 소음을 능동적으로 줄이는 방식",
+            "pnc": "이어패드와 이어팁이 귀를 물리적으로 막아 소음을 차단하는 방식"
+        },
+        "limitations": [
+            "ANC는 기차, 비행기 엔진, 에어컨처럼 비교적 일정하게 이어지는 저주파 소음에 효과적입니다.",
+            "사람의 말소리와 갑작스럽게 발생하는 높은 주파수의 소리는 상대적으로 줄이기 어렵습니다.",
+            "제품의 착용 상태, 이어패드 밀폐 정도, 주변 환경에 따라 실제 소음 감소 효과가 달라질 수 있습니다."
+        ]
+    },
+    "products": [
+        {
+            "id": "sony-wh-1000xm6",
+            "brand": "Sony",
+            "name": "WH-1000XM6",
+            "priceText": "619,000원",
+            "priceKRW": 619000,
+            "release": "2025년 6월",
+            "weightGram": 254,
+            "batteryANC": 30,
+            "batteryText": "ANC 켬 최대 30시간",
+            "bluetooth": "Bluetooth 5.3",
+            "description": "12개의 마이크와 QN3 프로세서를 사용해 주변 소음을 실시간으로 분석하는 Sony의 플래그십 무선 노이즈 캔슬링 헤드폰입니다.",
+            "terms": ["QN3", "12 MIC"],
+            "cardSelector": "#product-sony-wh-1000xm6",
+            "officialUrl": "https://store.sony.co.kr/product-view/130258270"
+        },
+        {
+            "id": "bose-qc-ultra-2",
+            "brand": "Bose",
+            "name": "QuietComfort Ultra Headphones 2세대",
+            "priceText": "519,000원",
+            "priceKRW": 519000,
+            "release": "2025년 10월",
+            "weightGram": 260,
+            "batteryANC": 30,
+            "batteryText": "최대 30시간",
+            "bluetooth": "Bluetooth 5.4",
+            "description": "강력한 노이즈 캔슬링과 사용자 맞춤 음향 기능, 영상 감상을 위한 Cinema Mode를 제공하는 프리미엄 오버이어 헤드폰입니다.",
+            "terms": ["CUSTOMTUNE", "CINEMA MODE"],
+            "cardSelector": "#product-bose-qc-ultra-2",
+            "officialUrl": "https://www.bose.co.kr/HEADPHONES/?idx=282"
+        },
+        {
+            "id": "sennheiser-momentum-5",
+            "brand": "Sennheiser",
+            "name": "MOMENTUM 5 Wireless",
+            "priceText": "599,000원",
+            "priceKRW": 599000,
+            "release": "2026년 6월",
+            "weightGram": 290,
+            "batteryANC": 57,
+            "batteryText": "ANC 켬 최대 57시간",
+            "bluetooth": "Bluetooth 5.4",
+            "description": "42mm 다이내믹 드라이버와 8마이크 하이브리드 ANC, 사용자 교체형 배터리를 적용한 음악 감상 중심의 무선 헤드폰입니다.",
+            "terms": ["8 MIC ANC", "aptX LOSSLESS"],
+            "cardSelector": "#product-sennheiser-momentum-5",
+            "officialUrl": "https://kr.sennheiser-hearing.com/product/%EB%AA%A8%EB%A9%98%ED%85%80-5-%EC%99%80%EC%9D%B4%EC%96%B4%EB%A6%AC%EC%8A%A4/688/"
+        },
+        {
+            "id": "jbl-tour-one-m3",
+            "brand": "JBL",
+            "name": "Tour One M3 Smart Tx",
+            "priceText": "68만원",
+            "priceKRW": null,
+            "release": "2025년 4월",
+            "weightGram": 278,
+            "batteryANC": 40,
+            "batteryText": "ANC 켬 최대 40시간",
+            "bluetooth": "Bluetooth 5.3 LE Audio",
+            "description": "True Adaptive Noise Cancelling 2.0과 화면이 달린 Smart Tx 송신기를 통해 여러 오디오 기기를 연결할 수 있는 무선 헤드폰입니다.",
+            "terms": ["ANC 2.0", "SMART TX"],
+            "cardSelector": "#product-jbl-tour-one-m3",
+            "officialUrl": "https://global.jbl.com/over-ear-headphones/TOUR-ONE-M3-TX.html"
+        },
+        {
+            "id": "apple-airpods-max-2",
+            "brand": "Apple",
+            "name": "AirPods Max 2",
+            "priceText": "849,000원",
+            "priceKRW": 849000,
+            "release": "2026년 4월",
+            "weightGram": 386.2,
+            "batteryANC": 20,
+            "batteryText": "ANC 켬 최대 20시간",
+            "bluetooth": "Bluetooth 5.3",
+            "description": "H2 칩과 8개의 ANC용 마이크를 기반으로 적응형 오디오와 개인 맞춤형 공간 음향을 제공하는 Apple 오버이어 헤드폰입니다.",
+            "terms": ["H2", "SPATIAL AUDIO"],
+            "cardSelector": "#product-apple-airpods-max-2",
+            "officialUrl": "https://www.apple.com/kr/airpods-max/"
+        },
+        {
+            "id": "bw-px8-s2",
+            "brand": "Bowers & Wilkins",
+            "name": "Px8 S2",
+            "priceText": "1,139,000원",
+            "priceKRW": 1139000,
+            "release": "2025년 9월",
+            "weightGram": 310,
+            "batteryANC": 30,
+            "batteryText": "최대 30시간",
+            "bluetooth": "Bluetooth 5.3",
+            "description": "40mm 카본 콘 드라이버와 8개의 마이크, aptX Lossless를 지원하는 Bowers & Wilkins의 플래그십 무선 헤드폰입니다.",
+            "terms": ["CARBON 40MM", "aptX LOSSLESS"],
+            "cardSelector": "#product-bw-px8-s2",
+            "officialUrl": "https://bowerswilkinskorea.co.kr/Headphones/?idx=53"
+        }
+    ],
+    "glossary": [
+        {
+            "id": "term-anc",
+            "term": "ANC",
+            "aliases": ["노이즈 캔슬링", "액티브 노이즈 캔슬링", "능동형 소음 제거"],
+            "description": "Active Noise Cancellation의 약자다. 헤드폰의 마이크가 주변 소음을 감지하고 소음을 줄이는 신호를 만들어 외부 소리를 낮추는 기술이다.",
+            "selector": "#term-anc"
+        },
+        {
+            "id": "term-mic",
+            "term": "MIC",
+            "aliases": ["마이크", "마이크로폰"],
+            "description": "Microphone의 줄임말이다. 주변 소음 감지, ANC 처리, 통화 음성 수집 등에 사용된다. 제조사마다 마이크를 세는 기준이 달라 숫자만으로 성능을 비교할 수 없다.",
+            "selector": "#term-mic"
+        },
+        {
+            "id": "term-qn3",
+            "term": "QN3",
+            "aliases": ["QN3 프로세서"],
+            "description": "Sony가 WH-1000XM6에 적용한 HD 노이즈 캔슬링 프로세서다. 12개 마이크의 정보를 실시간으로 처리한다.",
+            "selector": "#term-qn3"
+        },
+        {
+            "id": "term-12-mic",
+            "term": "12 MIC",
+            "aliases": ["12개의 마이크"],
+            "description": "MIC는 Microphone의 줄임말입니다. Sony WH-1000XM6는 총 12개의 마이크를 사용해 주변 소음과 착용 상태를 감지하고 노이즈 캔슬링 처리를 조절합니다. 마이크 수만으로 제품의 전체 성능을 판단할 수는 없습니다.",
+            "selector": "#term-12-mic"
+        },
+        {
+            "id": "term-customtune",
+            "term": "CustomTune",
+            "aliases": ["사용자 맞춤 음향 기능"],
+            "description": "Bose가 사용자의 귀 형태와 음향 특성을 측정해 소리와 노이즈 캔슬링을 자동으로 조절하는 맞춤형 음향 기술입니다.",
+            "selector": "#term-customtune"
+        },
+        {
+            "id": "term-cinema-mode",
+            "term": "Cinema Mode",
+            "aliases": [],
+            "description": "영상의 대사와 배경음, 공간감을 조절해 영화와 영상 감상에 적합한 음향을 제공하는 Bose 기능입니다.",
+            "selector": "#term-cinema-mode"
+        },
+        {
+            "id": "term-hybrid-anc",
+            "term": "8 MIC Hybrid ANC",
+            "aliases": ["8마이크 하이브리드 ANC", "하이브리드 ANC"],
+            "description": "이어컵 안쪽과 바깥쪽의 마이크를 함께 사용해 외부 소음과 귀 주변의 소리를 분석하는 하이브리드 노이즈 캔슬링 방식입니다.",
+            "selector": "#term-hybrid-anc"
+        },
+        {
+            "id": "term-aptx-lossless",
+            "term": "aptX Lossless",
+            "aliases": [],
+            "description": "호환 기기와 연결 조건에서 무손실에 가까운 Bluetooth 오디오 전송을 지원하는 Qualcomm의 오디오 코덱 기술입니다.",
+            "selector": "#term-aptx-lossless"
+        },
+        {
+            "id": "term-anc-2",
+            "term": "ANC 2.0",
+            "aliases": ["True Adaptive Noise Cancelling 2.0"],
+            "description": "JBL의 True Adaptive Noise Cancelling 2.0 기술입니다. 여러 마이크로 주변 소음을 실시간으로 감지하고 사용 환경에 맞춰 노이즈 캔슬링 강도를 조절합니다.",
+            "selector": "#term-anc-2"
+        },
+        {
+            "id": "term-smart-tx",
+            "term": "Smart Tx",
+            "aliases": [],
+            "description": "JBL Tour One M3 Smart Tx와 함께 사용하는 터치스크린 무선 오디오 송신기입니다. USB-C 또는 3.5mm 오디오 기기를 헤드폰에 연결하고 화면에서 재생과 주요 설정을 조작할 수 있습니다.",
+            "selector": "#term-smart-tx"
+        },
+        {
+            "id": "term-h2",
+            "term": "H2",
+            "aliases": ["H2 칩"],
+            "description": "Apple의 컴퓨테이셔널 오디오 칩입니다. 노이즈 캔슬링, 음향 처리, 적응형 오디오와 공간 음향 기능을 처리합니다.",
+            "selector": "#term-h2"
+        },
+        {
+            "id": "term-spatial-audio",
+            "term": "Spatial Audio",
+            "aliases": ["공간 음향", "개인 맞춤형 공간 음향"],
+            "description": "소리가 사용자의 앞과 주변 공간에서 들리는 것처럼 표현하는 공간 음향 기술입니다. 지원 콘텐츠와 기기에서는 머리 움직임을 반영하는 동적 머리 추적 기능도 사용할 수 있습니다.",
+            "selector": "#term-spatial-audio"
+        },
+        {
+            "id": "term-carbon-driver",
+            "term": "40mm Carbon Cone Driver",
+            "aliases": ["40mm 카본 콘 드라이버", "카본 콘 드라이버"],
+            "description": "40mm 크기의 카본 소재 진동판을 사용한 드라이버입니다. 진동판의 강성을 높여 소리의 왜곡을 줄이고 세밀한 음향 표현을 목표로 합니다.",
+            "selector": "#term-carbon-driver"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "en": "A well-spent day brings happy sleep.",
+        "ko": "하루를 알차게 보내면 밤에는 편안하게 잠들 수 있습니다.",
+        "author": "Leonardo da Vinci"
+    },
+    {
+        "id": 2,
+        "en": "The secret of getting ahead is getting started.",
+        "ko": "앞서 나가는 비결은 일단 시작하는 것입니다.",
+        "author": "Mark Twain"
+    },
+    {
+        "id": 3,
+        "en": "Small daily improvements are the key to staggering long-term results.",
+        "ko": "매일의 작은 개선이 쌓여 놀라운 결과를 만듭니다.",
+        "author": "Anonymous"
+    },
+    {
+        "id": 4,
+        "en": "You don't have to be great to start, but you have to start to be great.",
+        "ko": "위대해야 시작할 수 있는 것이 아니라, 시작해야 위대해질 수 있습니다.",
+        "author": "Zig Ziglar"
+    },
+    {
+        "id": 5,
+        "en": "Well begun is half done.",
+        "ko": "시작이 좋으면 이미 절반은 끝난 것입니다.",
+        "author": "Aristotle"
+    },
+    {
+        "id": 6,
+        "en": "Action is the foundational key to all success.",
+        "ko": "행동은 모든 성공의 가장 기본이 되는 열쇠입니다.",
+        "author": "Pablo Picasso"
+    },
+    {
+        "id": 7,
+        "en": "Do the hard jobs first. The easy jobs will take care of themselves.",
+        "ko": "어려운 일부터 먼저 처리하세요. 쉬운 일은 저절로 해결됩니다.",
+        "author": "Dale Carnegie"
+    },
+    {
+        "id": 8,
+        "en": "It always seems impossible until it's done.",
+        "ko": "무슨 일이든 해내기 전까지는 늘 불가능해 보이는 법입니다.",
+        "author": "Nelson Mandela"
+    },
+    {
+        "id": 9,
+        "en": "Focus on being productive instead of busy.",
+        "ko": "바쁘게 사는 것보다 생산적으로 사는 것에 집중하세요.",
+        "author": "Tim Ferriss"
+    },
+    {
+        "id": 10,
+        "en": "One todo completed is one step closer to a calmer mind.",
+        "ko": "할 일 하나를 끝낼 때마다 마음은 한층 더 가벼워집니다.",
+        "author": "Anonymous"
+    },
+    {
+        "id": 11,
+        "en": "Progress, not perfection, is what we should be asking of ourselves.",
+        "ko": "우리에게 필요한 것은 완벽함이 아니라 꾸준한 전진입니다.",
+        "author": "Julia Cameron"
+    },
+    {
+        "id": 12,
+        "en": "What we plant in the soil of contemplation, we shall reap in the harvest of action.",
+        "ko": "생각의 밭에 심은 것을 우리는 행동의 결실로 거두게 됩니다.",
+        "author": "Meister Eckhart"
+    }
+]

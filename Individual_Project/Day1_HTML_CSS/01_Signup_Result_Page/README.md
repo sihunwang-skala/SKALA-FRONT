@@ -1,11 +1,7 @@
 # Sign Up Page
 
 > 수업 시간에 실습한 HTML Form을 바탕으로 만든 회원가입 및 결과 페이지입니다.  
-> 회원 정보를 입력하면 입력 조건을 확인한 뒤 `result.html`로 이동하고, 전달된 값은 표에서 다시 확인할 수 있습니다.
-
-![HTML](https://img.shields.io/badge/HTML5-Form-E34F26?logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-Responsive-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-DOM-F7DF1E?logo=javascript&logoColor=black)
+> `signup.html`회원 정보를 입력하면 입력 조건을 확인한 뒤 `result.html`로 이동하고, 전달된 값은 표에서 다시 확인할 수 있습니다.
 
 ---
 

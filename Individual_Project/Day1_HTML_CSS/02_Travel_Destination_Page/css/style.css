@@ -1,0 +1,790 @@
+/* 기본 설정 */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.trip-page {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #243447;
+    background-color: #f4f7fb;
+}
+
+.trip-page img,
+.trip-page video {
+    max-width: 100%;
+}
+
+.trip-page section,
+.trip-page aside {
+    scroll-margin-top: 100px;
+}
+
+.trip-page h1,
+.trip-page h2,
+.trip-page h3,
+.trip-page h4,
+.trip-page p,
+.trip-page li,
+.trip-page span,
+.trip-page strong,
+.trip-page small,
+.trip-page figcaption {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.trip-page .hero-content,
+.trip-page .card,
+.trip-page .card figcaption,
+.trip-page .food,
+.trip-page .food-card,
+.trip-page .food-description,
+.trip-page .tips,
+.trip-page .video-description {
+    min-width: 0;
+}
+
+.trip-page .keyword {
+    color: #125f91;
+
+    font-weight: bold;
+}
+
+.trip-page .keyword-link {
+    color: #0a84ff;
+
+    font-weight: bold;
+    text-decoration: underline;
+
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.trip-page .keyword-link:hover {
+    color: #006fe6;
+}
+
+/* 과제 requirement: position fixed를 사용한 상단 메뉴 */
+.trip-page nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 72px;
+
+    padding: 0 7%;
+
+    background-color: rgba(8, 25, 46, 0.92);
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+.trip-page .logo {
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.trip-page nav ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.trip-page nav ul a {
+    display: block;
+
+    padding: 8px 14px;
+
+    font-size: 15px;
+    border-radius: 20px;
+
+    color: #f3f8ff;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.trip-page nav ul a:hover {
+    color: #ffffff;
+    background-color: rgba(68, 165, 255, 0.32);
+
+    transform: translateY(-2px);
+}
+
+/* 대표 화면 - 배경 이미지와 그라데이션을 같이 사용 */
+.trip-page .hero {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 760px;
+
+    padding:
+        120px
+        8%
+        80px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(4, 18, 38, 0.93) 0%,
+            rgba(4, 18, 38, 0.72) 45%,
+            rgba(4, 18, 38, 0.18) 100%
+        ),
+        url("../media/chicago_night_view.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.trip-page .hero-content {
+    position: relative;
+    z-index: 1;
+
+    width: min(900px, 100%);
+
+    color: #ffffff;
+}
+
+.trip-page .travel-date {
+    margin: 0 0 10px;
+
+    color: #71c7ff;
+
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.trip-page .hero h1 {
+    max-width: 900px;
+
+    margin: 0 0 24px;
+    padding: 0;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: clamp(52px, 5vw, 72px);
+    line-height: 1.12;
+    text-shadow:
+        0
+        5px
+        18px
+        rgba(0, 0, 0, 0.4);
+}
+
+.trip-page .hero-description {
+    max-width: 760px;
+
+    margin: 0 0 34px;
+
+    color: #e7f2ff;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.trip-page .hero-button {
+    display: inline-block;
+
+    font-size: 15px;
+    padding: 13px 28px;
+
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.trip-page .hero-button:hover {
+    color: #0a2746;
+    background-color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+.trip-page main {
+    width: min(1240px, calc(100% - 40px));
+
+    margin: 0 auto;
+    padding: 70px 0 30px;
+}
+
+.trip-page main > section {
+    margin-bottom: 90px;
+}
+
+.trip-page main > section > h2 {
+    margin: 0 0 30px;
+    padding: 0 0 14px;
+
+    border-bottom: 3px solid #d9e7f5;
+
+    color: #102f50;
+
+    font-size: 30px;
+}
+
+.trip-page #about {
+    padding: 38px 42px;
+
+    border-left: 7px solid #2e83c5;
+    border-radius: 0 18px 18px 0;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0
+        12px
+        32px
+        rgba(20, 57, 91, 0.08);
+}
+
+.trip-page #about p {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+/* 과제 requirement: Grid 명소 갤러리 */
+.trip-page .gallery {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.trip-page .card {
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    border: 1px solid #dce6f0;
+    border-radius: 18px;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0
+        10px
+        26px
+        rgba(16, 47, 80, 0.10);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.trip-page .image-box {
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    padding: 8px;
+
+    background-color: #dce6f0;
+}
+
+.trip-page .card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    object-fit: contain;
+    object-position: center;
+    transition:
+        transform 0.35s ease;
+}
+
+.trip-page .card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 22px;
+}
+
+.trip-page .card figcaption strong {
+    color: #102f50;
+
+    font-size: 22px;
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+.trip-page .card figcaption span {
+    color: #4f6274;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.trip-page .card figcaption small {
+    color: #728294;
+
+    font-size: 13px;
+}
+
+.trip-page .card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0
+        18px
+        38px
+        rgba(16, 47, 80, 0.18);
+}
+
+.trip-page .card:hover img {
+    transform: scale(1.025);
+}
+
+/* article + aside 2단 영역 */
+.trip-page .food-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(280px, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.trip-page .food,
+.trip-page .tips {
+    border-radius: 18px;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0
+        10px
+        28px
+        rgba(16, 47, 80, 0.09);
+}
+
+.trip-page .food {
+    padding: 30px;
+}
+
+.trip-page .food h3,
+.trip-page .tips h3,
+.trip-page .video-description h3 {
+    margin: 0 0 20px;
+
+    color: #164d78;
+
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.trip-page .food-ranking-link-wrap {
+    margin: 0 0 20px;
+}
+
+.trip-page .food-ranking-link {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    background-color: #16a085;
+    color: #ffffff;
+
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.trip-page .food-ranking-link:hover {
+    background-color: #117a65;
+
+    transform: translateY(-2px);
+}
+
+.trip-page .food-list {
+    display: grid;
+    gap: 24px;
+}
+
+.trip-page .food-card {
+    display: grid;
+    grid-template-columns:
+        220px
+        minmax(0, 1fr);
+    gap: 24px;
+
+    overflow: hidden;
+    border: 1px solid #e0e7ef;
+    border-radius: 14px;
+
+    background-color: #fbfdff;
+}
+
+.trip-page .food-card > img {
+    width: 100%;
+    height: 230px;
+
+    align-self: start;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.35s ease;
+}
+
+.trip-page .food-card:hover > img {
+    transform: scale(1.05);
+}
+
+.trip-page .food-description {
+    padding: 22px 22px 22px 0;
+}
+
+.trip-page .food-description h4 {
+    margin: 0 0 10px;
+
+    color: #143f66;
+
+    font-size: 22px;
+}
+
+.trip-page .food-description p {
+    margin: 0 0 15px;
+
+    color: #536577;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.trip-page .source {
+    display: block;
+
+    color: #6f7f8e;
+
+    font-size: 13px;
+}
+
+.trip-page .source a {
+    color: #176ca8;
+
+    text-decoration: underline;
+}
+
+.trip-page .tips {
+    padding: 30px;
+
+    border-top: 7px solid #2e83c5;
+}
+
+.trip-page .tips ul {
+    margin: 0;
+
+    padding-left: 24px;
+}
+
+.trip-page .tips li {
+    margin-bottom: 19px;
+
+    color: #536577;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.trip-page .tips strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #173f63;
+}
+
+/* video와 설명 배치 */
+.trip-page .video-wrap {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(340px, 0.75fr);
+
+    overflow: hidden;
+    border-radius: 18px;
+
+    background-color: #071726;
+
+    box-shadow:
+        0
+        14px
+        36px
+        rgba(5, 22, 38, 0.2);
+}
+
+.trip-page .video-wrap video {
+    display: block;
+
+    width: 100%;
+    min-height: 450px;
+    max-height: 650px;
+
+    background-color: #000000;
+
+    object-fit: contain;
+}
+
+.trip-page .video-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 36px;
+
+    color: #ffffff;
+}
+
+.trip-page .video-description h3 {
+    color: #7bceff;
+}
+
+.trip-page .video-description p {
+    color: #d5e6f5;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* footer와 맨 위로 이동 링크 */
+.trip-page footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 30px 8%;
+
+    color: #d8e8f7;
+    background-color: #081a2c;
+
+    font-size: 14px;
+    text-align: center;
+}
+
+.trip-page footer p {
+    margin: 0;
+}
+
+.trip-page footer a {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.trip-page footer a:hover {
+    color: #0a2746;
+    background-color: #ffffff;
+}
+
+/* 여행 지도 */
+.trip-page .map-description {
+    margin: 0 0 24px;
+
+    color: #536577;
+
+    font-size: 16px;
+    line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.trip-page .map-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+    border: 1px solid #dce6f0;
+    border-radius: 18px;
+
+    background-color: #e9f0f7;
+
+    box-shadow:
+        0
+        12px
+        30px
+        rgba(16, 47, 80, 0.12);
+}
+
+.trip-page .map-wrap iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+@media (max-width: 720px) {
+    .trip-page .map-wrap {
+        aspect-ratio: 4 / 3;
+    }
+    .trip-page .map-description {
+        font-size: 16px;
+    }
+}
+
+/* 과제 requirement: 화면 크기에 따른 반응형 처리 */
+@media (max-width: 960px) {
+    .trip-page nav {
+        padding: 0 4%;
+    }
+    .trip-page nav ul {
+        gap: 2px;
+    }
+    .trip-page nav ul a {
+        padding: 7px 9px;
+
+        font-size: 14px;
+    }
+    .trip-page .gallery {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+    .trip-page .food-layout,
+    .trip-page .video-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .trip-page nav {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+
+        padding: 8px 18px 10px;
+    }
+    .trip-page .logo {
+        font-size: 18px;
+    }
+    .trip-page nav ul {
+        width: 100%;
+
+        overflow-x: auto;
+        flex-direction: row;
+        gap: 4px;
+
+        white-space: nowrap;
+    }
+    .trip-page nav ul a {
+        font-size: 14px;
+    }
+    .trip-page .hero {
+        min-height: 690px;
+
+        padding:
+            150px
+            24px
+            70px;
+
+        background-position: 58% center;
+    }
+    .trip-page .hero h1 {
+        font-size: 40px;
+    }
+    .trip-page .hero-description {
+        font-size: 16px;
+    }
+    .trip-page main {
+        width: min(100% - 28px, 1240px);
+
+        padding-top: 45px;
+    }
+    .trip-page main > section {
+        margin-bottom: 65px;
+    }
+    .trip-page main > section > h2 {
+        font-size: 26px;
+    }
+    .trip-page #about {
+        padding: 26px;
+    }
+    .trip-page .gallery {
+        grid-template-columns: 1fr;
+    }
+    .trip-page .image-box {
+        height: 380px;
+    }
+    .trip-page .food,
+    .trip-page .tips {
+        padding: 22px;
+    }
+    .trip-page .food-card {
+        grid-template-columns: 1fr;
+    }
+    .trip-page .food-card > img {
+        max-height: 340px;
+    }
+    .trip-page .food-description {
+        padding: 0 20px 22px;
+    }
+    .trip-page .video-wrap video {
+        min-height: 320px;
+    }
+    .trip-page .video-description {
+        padding: 28px;
+    }
+}

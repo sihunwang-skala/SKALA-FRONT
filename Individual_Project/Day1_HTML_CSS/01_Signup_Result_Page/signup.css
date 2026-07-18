@@ -1,0 +1,518 @@
+/* 공통 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background: #f4f6f8;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* 상단 헤더 */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  color: #1c2b36;
+  background: #fff;
+  border-bottom: 4px solid #ea002c;
+  box-shadow: 0 2px 0 #f47725, 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.logo-area img {
+  display: block;
+  width: auto;
+  height: 42px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* 헤더가 fixed라 본문 위쪽 여백을 조금 넉넉하게 줌 */
+.page-container {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 135px 0 60px;
+}
+
+.intro-section {
+  margin-bottom: 25px;
+}
+
+.intro-section h2,
+.result-card h2 {
+  margin-top: 0;
+  color: #ea002c;
+  font-size: 30px;
+}
+
+.required-guide,
+.help-text {
+  color: #687887;
+  font-size: 13px;
+}
+
+.required-mark {
+  color: #d63031;
+  font-weight: bold;
+}
+
+/* 회원가입 폼. input 모양은 거의 같아서 아래에서 같이 묶었다. */
+.signup-form,
+.result-card {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #d9e0e7;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+fieldset {
+  margin: 0 0 28px;
+  padding: 24px;
+  background: #fbfcfd;
+  border: 1px solid #cbd5df;
+  border-radius: 9px;
+}
+
+legend {
+  padding: 0 12px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group > label,
+.group-label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.help-text {
+  display: block;
+  margin-top: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  color: #2c3e50;
+  background: #fff;
+  border: 1px solid #b8c4cf;
+  border-radius: 6px;
+}
+
+/* focus가 보이도록 해서 지금 어느 칸을 쓰는지 알 수 있게 함 */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #f47725;
+  box-shadow: 0 0 0 4px rgba(244, 119, 37, 0.16);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.choice-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  background: #fff;
+  border: 1px solid #d7dee5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.choice-item:hover {
+  border-color: #f47725;
+  background: #fdeee3;
+}
+
+.terms-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px;
+  background: #eef4fa;
+  border: 1px solid #c8d7e6;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 140px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* btn 공통 스타일보다 조금 더 구체적으로 지정한 메인 버튼 */
+.btn.btn-primary {
+  color: #fff;
+  background: #f47725;
+}
+
+.btn.btn-primary:hover {
+  background: #f47725;
+}
+
+.btn.btn-secondary {
+  color: #fff;
+  background: #7f8c8d;
+}
+
+.btn.btn-secondary:hover {
+  background: #626f70;
+}
+
+/* result.html에서 쓰는 표 부분 */
+.result-message {
+  margin-bottom: 25px;
+  color: #566573;
+}
+
+.completion-message {
+  margin-bottom: 25px;
+  padding: 16px 18px;
+  color: #146c4c;
+  background: #e6f7f1;
+  border: 1px solid #a9ddc9;
+  border-left: 5px solid #1f9d74;
+  border-radius: 8px;
+}
+
+.completion-message strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.completion-message p {
+  margin: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-table caption {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.result-table th,
+.result-table td {
+  padding: 13px 14px;
+  border: 1px solid #ccd6df;
+  text-align: left;
+}
+
+.result-table th {
+  width: 28%;
+  color: #fff;
+  background: #f47725;
+}
+
+.result-table td {
+  background: #fff;
+  word-break: break-word;
+}
+
+.result-table .table-section-title th {
+  width: auto;
+  padding: 18px 14px 10px;
+  color: #f47725;
+  background: #fff;
+  border: 0;
+  border-bottom: 2px solid #d5dde5;
+}
+
+.empty-value {
+  color: #87929c;
+  font-style: italic;
+}
+
+/* 오른쪽에 계속 떠 있는 가입 도우미 (추가로 해본 기능) */
+.signup-helper {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  height: 480px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 140px);
+  background: #fff;
+  border: 1px solid #d9e0e7;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+}
+
+.helper-header {
+  padding: 14px 16px;
+  color: #fff;
+  background: #ea002c;
+}
+
+.helper-header strong,
+.helper-status {
+  display: block;
+}
+
+.helper-status {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.helper-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #f9fbfc;
+  overflow-y: auto;
+}
+
+.helper-message {
+  max-width: 85%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background: #eef1f4;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: #fff;
+  border: 1px solid #f47725;
+}
+
+.helper-quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid #e5eaf0;
+}
+
+.helper-quick-questions button {
+  padding: 6px 10px;
+  color: #ea002c;
+  background: #fff;
+  border: 1px solid #f3b7c1;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.helper-quick-questions button:hover {
+  border-color: #f47725;
+  background: #fdeee3;
+}
+
+.helper-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid #e5eaf0;
+}
+
+.helper-form input {
+  flex: 1;
+  padding: 9px 10px;
+  border: 1px solid #b8c4cf;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.helper-form button {
+  padding: 9px 14px;
+  color: #fff;
+  background: #ea002c;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.helper-form button:hover {
+  background: #f47725;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer {
+    margin-top: 60px;
+    padding: 24px 16px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #333333;
+    border-top: 4px solid #EA002C;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* 휴대폰처럼 폭이 좁으면 한 줄로 보이게 */
+@media (max-width: 600px) {
+  .header-inner {
+    width: calc(100% - 28px);
+  }
+
+  .site-header h1 {
+    font-size: 20px;
+  }
+
+  .page-container {
+    width: calc(100% - 20px);
+    padding-top: 125px;
+  }
+
+  .signup-form,
+  .result-card {
+    padding: 18px;
+  }
+
+  fieldset {
+    padding: 18px 14px;
+  }
+
+  .choice-group,
+  .interest-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .choice-item,
+  .btn {
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .signup-helper {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+    width: auto;
+    height: 360px;
+    max-height: calc(100vh - 100px);
+  }
+
+  .result-table th {
+    width: 35%;
+  }
+}
+
+/* 도우미가 폼을 가리지 않도록 중간 크기 화면에서만 위치 조금 조절 */
+@media (min-width: 1100px) and (max-width: 1500px) {
+  .signup-page .page-container {
+    width: min(760px, calc(100% - 390px));
+    margin-left: 40px;
+  }
+}

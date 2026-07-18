@@ -1,0 +1,403 @@
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+body.ranking-page {
+    margin: 0;
+
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #2c3e50;
+    background-color: #f4f7fb;
+}
+
+
+/* 페이지 상단 소개 */
+/* 과제 requirement: 배경 이미지 사용 */
+.ranking-hero {
+    position: relative;
+
+    padding: 70px 8% 50px;
+    text-align: center;
+
+    color: #102f50;
+
+    background-image: url("../media/chicago_building_city.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ranking-hero h1,
+.ranking-hero-date,
+.ranking-hero-description {
+    text-shadow:
+        0 1px 3px rgba(255, 255, 255, 0.8),
+        0 1px 12px rgba(255, 255, 255, 0.6);
+}
+
+
+.ranking-hero-date {
+    margin: 0 0 10px;
+
+    color: #16628f;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.ranking-hero h1 {
+    margin: 0 0 16px;
+    font-size: clamp(32px, 5vw, 48px);
+}
+
+.ranking-hero-description {
+    max-width: 640px;
+    margin: 0 auto;
+
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+
+    word-break: keep-all;
+}
+
+
+/* 여행 페이지로 돌아가기 버튼 */
+.back-link {
+    display: inline-block;
+
+    margin-bottom: 24px;
+    padding: 8px 16px;
+
+    border: 1px solid rgba(16, 47, 80, 0.25);
+    border-radius: 20px;
+
+    color: #102f50;
+    background-color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: color 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: #102f50;
+    color: #ffffff;
+}
+
+
+/* 푸터에 있는 돌아가기 버튼 */
+.back-link-footer {
+    margin: 4px 0 0;
+
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+}
+
+.back-link-footer:hover {
+    color: #0a2746;
+    background-color: #ffffff;
+}
+
+
+.ranking-hero-hint {
+    display: inline-block;
+
+    margin: 20px auto 0;
+    padding: 8px 18px;
+
+    color: #102f50;
+    background-color: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid rgba(16, 47, 80, 0.25);
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+
+/* 전체 내용 영역 */
+main {
+    width: min(1100px, calc(100% - 40px));
+
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.ranking-section {
+    margin-bottom: 64px;
+}
+
+.ranking-section h2 {
+    margin: 0 0 10px;
+
+    color: #234477;
+    font-size: 30px;
+}
+
+
+/* 순위 출처 */
+.ranking-source-note {
+    margin: 0 0 24px;
+
+    color: #728294;
+    font-size: 15px;
+}
+
+.ranking-source-note a {
+    color: #0a84ff;
+
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.ranking-source-note a:hover {
+    color: #006fe6;
+}
+
+
+
+/* 순위 카드 */
+
+/* 과제 requirement: Grid를 사용하여 카드 배치 */
+.ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.rank-card {
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dce6f0;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 26px rgba(16, 47, 80, 0.08);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+
+/* 카드 hover 효과 */
+.rank-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 34px rgba(16, 47, 80, 0.16);
+}
+
+
+/* 1위, 2위, 3위 구분 */
+.rank-card.rank-gold {
+    border-top: 6px solid #d4af37;
+}
+
+.rank-card.rank-silver {
+    border-top: 6px solid #a7abb0;
+}
+
+.rank-card.rank-bronze {
+    border-top: 6px solid #b08d57;
+}
+
+
+/* 맛집 사진 */
+.rank-image-box {
+    position: relative;
+    display: block;
+
+    height: 190px;
+    overflow: hidden;
+
+    background-color: #e9f0f7;
+    text-decoration: none;
+}
+
+.rank-image-box img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.35s ease;
+}
+
+.rank-card:hover .rank-image-box img {
+    transform: scale(1.05);
+}
+
+
+/* 사진 위 Google 지도 안내 */
+.map-search-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background-color: rgba(8, 25, 46, 0.55);
+
+    font-size: 15px;
+    font-weight: bold;
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+
+.map-search-link::after {
+    content: "📍";
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+    background-color: rgba(8, 25, 46, 0.75);
+
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.rank-card:hover .map-search-overlay {
+    opacity: 1;
+}
+
+
+/* 카드 설명 */
+.rank-body {
+    padding: 22px;
+}
+
+.rank-badge {
+    margin: 0 0 12px;
+
+    color: #536577;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.rank-card h3 {
+    margin: 0 0 6px;
+
+    color: #102f50;
+    font-size: 22px;
+}
+
+.rank-location {
+    margin: 0 0 12px;
+    color: #728294;
+
+    font-size: 14px;
+}
+
+.rank-description {
+    margin: 0 0 14px;
+
+    color: #4f6274;
+    font-size: 16px;
+    line-height: 1.6;
+
+    word-break: keep-all;
+}
+
+
+/* 사진 출처는 본문보다 작게 표시 */
+.rank-photo-credit {
+    display: block;
+
+    color: #9aa8b5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.rank-photo-credit a {
+    color: #0a84ff;
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.rank-photo-credit a:hover {
+    color: #006fe6;
+}
+
+
+
+/* 하단 영역 - 두 페이지의 copyright 위치를 가운데로 통일 */
+.ranking-footer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 30px 8%;
+
+    color: #d8e8f7;
+    background-color: #081a2c;
+
+    font-size: 14px;
+    text-align: center;
+}
+
+.ranking-footer p {
+    margin: 0;
+}
+
+.ranking-footer-note {
+    color: #8fa5bb;
+    font-size: 13px;
+}
+
+
+/* 반응형 */
+/* 태블릿에서는 카드 2개 */
+@media (max-width: 900px) {
+
+    .ranking-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* 모바일에서는 카드 1개 */
+@media (max-width: 600px) {
+    .ranking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ranking-hero {
+        padding: 50px 6% 40px;
+    }
+}

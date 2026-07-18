@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="signup.css" />
+    <script src="validation.js" defer></script>
+  </head>
+
+  <body class="signup-page">
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <img src="./media/skala-logo.jpg" alt="SKALA 로고" />
+        </div>
+        <h1>Sign Up Page</h1>
+      </div>
+    </header>
+
+    <main class="page-container">
+      <section class="intro-section">
+        <h2>회원가입</h2>
+        <p>회원 정보를 입력한 후 회원가입 버튼을 누르면 입력 결과를 표로 확인할 수 있습니다.</p>
+        <p class="required-guide"><span class="required-mark">*</span> 표시가 있는 항목은 필수입니다.</p>
+      </section>
+
+      <!-- GET 방식으로 보내고 result.html에서 주소값을 읽어서 보여준다. -->
+      <form action="result.html" method="get" class="signup-form">
+        <!-- PPT 조건: fieldset / legend로 관련 항목 묶기 -->
+        <fieldset>
+          <legend>기본 회원 정보</legend>
+
+          <!-- 이름, 아이디, 비밀번호, 이메일은 필수라 required를 넣었다. -->
+          <div class="form-group">
+            <label for="userName">이름 <span class="required-mark">*</span></label>
+            <input type="text" id="userName" name="userName" placeholder="이름을 입력해 주세요." maxlength="20" required />
+            <small class="help-text">실제 이름을 입력해 주세요.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="userId">아이디 <span class="required-mark">*</span></label>
+            <input
+              type="text"
+              id="userId"
+              name="userId"
+              placeholder="영문/숫자 4~12자"
+              pattern="[A-Za-z0-9]{4,12}"
+              minlength="4"
+              maxlength="12"
+              title="영문/숫자를 사용하여 4~12자로 입력해 주세요."
+              required
+            />
+            <small class="help-text">영문/숫자만 사용하여 4~12자로 입력해 주세요.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="userPassword">비밀번호 <span class="required-mark">*</span></label>
+            <input
+              type="password"
+              id="userPassword"
+              name="userPassword"
+              placeholder="8자 이상 입력해 주세요."
+              minlength="8"
+              maxlength="30"
+              title="비밀번호를 8자 이상 입력해 주세요."
+              required
+            />
+            <small class="help-text">비밀번호는 8자 이상 입력해야 합니다.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="userEmail">이메일 <span class="required-mark">*</span></label>
+            <input type="email" id="userEmail" name="userEmail" placeholder="example@email.com" maxlength="50" required />
+            <small class="help-text">example@email.com 형식으로 입력해 주세요.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="userTel">전화번호</label>
+            <input
+              type="tel"
+              id="userTel"
+              name="userTel"
+              placeholder="010-0000-0000"
+              pattern="010-[0-9]{4}-[0-9]{4}"
+              title="010-0000-0000 형식으로 입력해 주세요."
+            />
+            <small class="help-text">하이픈(-)을 포함하여 입력해 주세요.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="userBirth">생년월일</label>
+            <input type="date" id="userBirth" name="userBirth" min="1900-01-01" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>선택 정보</legend>
+
+          <!-- radio는 하나만 선택, checkbox는 여러 개 선택 가능 -->
+
+          <div class="form-group">
+            <span class="group-label">성별</span>
+            <div class="choice-group">
+              <label class="choice-item"><input type="radio" name="gender" value="남성" /> 남성</label>
+              <label class="choice-item"><input type="radio" name="gender" value="여성" /> 여성</label>
+              <label class="choice-item"><input type="radio" name="gender" value="선택 안 함" /> 선택 안 함</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span class="group-label">관심 분야 <small>(복수 선택 가능)</small></span>
+            <!-- 같은 name을 써야 result.js에서 getAll로 한꺼번에 받을 수 있다. -->
+            <div class="choice-group interest-list">
+              <label class="choice-item"><input type="checkbox" name="interest" value="프론트엔드" /> 프론트엔드</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="백엔드" /> 백엔드</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="디자인" /> 디자인</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="클라우드" /> 클라우드</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="AI Agent" /> AI Agent</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="머신러닝(ML)" /> 머신러닝(ML)</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="딥러닝(DL)" /> 딥러닝(DL)</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="생성형 AI" /> 생성형 AI</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="자연어 처리(NLP)" /> 자연어 처리(NLP)</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="컴퓨터 비전" /> 컴퓨터 비전</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="데이터 분석" /> 데이터 분석</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="데이터 엔지니어링" /> 데이터 엔지니어링</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="MLOps" /> MLOps</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="DevOps" /> DevOps</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="사이버 보안" /> 사이버 보안</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="모바일 앱" /> 모바일 앱</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="IoT" /> IoT</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="블록체인" /> 블록체인</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="게임 개발" /> 게임 개발</label>
+              <label class="choice-item"><input type="checkbox" name="interest" value="UI/UX" /> UI/UX</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="region">지역</label>
+            <select id="region" name="region">
+              <option value="">지역을 선택해 주세요.</option>
+              <option value="서울특별시">서울특별시</option>
+              <option value="부산광역시">부산광역시</option>
+              <option value="대구광역시">대구광역시</option>
+              <option value="인천광역시">인천광역시</option>
+              <option value="광주광역시">광주광역시</option>
+              <option value="대전광역시">대전광역시</option>
+              <option value="울산광역시">울산광역시</option>
+              <option value="제주특별자치도">제주특별자치도</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="introduction">자기소개</label>
+            <textarea
+              id="introduction"
+              name="introduction"
+              rows="6"
+              maxlength="200"
+              placeholder="간단한 자기소개를 입력해 주세요. (최대 200자)"
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>약관 동의</legend>
+          <!-- 이것도 required라 체크하지 않으면 제출되지 않는다. -->
+          <label class="terms-box">
+            <input type="checkbox" id="termsAgreement" name="termsAgreement" value="동의함" required />
+            <span>개인정보 수집 및 이용 약관에 동의합니다. <span class="required-mark">*</span></span>
+          </label>
+        </fieldset>
+
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">회원가입</button>
+          <button type="reset" class="btn btn-secondary">다시 작성</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <p><small>© 2026 왕시훈. All rights reserved.</small></p>
+    </footer>
+
+    <!-- 수업 예제에서 조금 더 해본 부분: 입력 방법을 알려주는 간단한 도우미 -->
+    <aside id="signup-helper" class="signup-helper" aria-labelledby="helper-title">
+      <div class="helper-header">
+        <div>
+          <strong id="helper-title">💬 회원가입 도우미</strong>
+          <span class="helper-status">입력 도움말</span>
+        </div>
+      </div>
+
+      <div id="helper-messages" class="helper-messages" aria-live="polite">
+        <div class="helper-message bot-message">안녕하세요! 회원가입 중 궁금한 내용을 물어보세요.</div>
+      </div>
+
+      <div class="helper-quick-questions">
+        <button type="button" data-question="아이디 예시">아이디 예시</button>
+        <button type="button" data-question="비밀번호 조건">비밀번호 조건</button>
+        <button type="button" data-question="전화번호 형식">전화번호 형식</button>
+        <button type="button" data-question="필수 항목">필수 항목</button>
+      </div>
+
+      <!-- 회원가입 form 안에 form을 넣으면 안 돼서 바깥쪽에 따로 둠 -->
+      <form id="helper-form" class="helper-form">
+        <label for="helper-input" class="visually-hidden">회원가입 도움 질문</label>
+        <input type="text" id="helper-input" placeholder="예: 아이디는 어떻게 입력해?" autocomplete="off" />
+        <button type="submit">전송</button>
+      </form>
+    </aside>
+
+    <script src="signupHelper.js"></script>
+  </body>
+</html>

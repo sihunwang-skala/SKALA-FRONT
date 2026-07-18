@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Page</title>
+    <link rel="stylesheet" href="signup.css" />
+    <script src="result.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <img src="./media/skala-logo.jpg" alt="SKALA 로고" />
+        </div>
+        <h1>Result Page</h1>
+      </div>
+    </header>
+
+    <main class="page-container result-page">
+      <section class="result-card">
+        <h2>회원가입 결과</h2>
+        <p class="result-message">입력하신 회원 정보가 다음과 같이 전달되었습니다.</p>
+
+        <div class="completion-message">
+          <strong>✓ 회원가입이 완료되었습니다.</strong>
+          <p>입력하신 정보를 아래에서 확인해 주세요.</p>
+        </div>
+
+        <!-- 과제 조건대로 전달된 값을 표(table)에 보여준다. -->
+        <div class="table-wrapper">
+          <table class="result-table">
+            <caption>회원가입 입력 정보</caption>
+            <tbody>
+              <tr class="table-section-title">
+                <th colspan="2">기본 회원 정보</th>
+              </tr>
+              <tr><th scope="row">이름</th><td id="result-name">불러오는 중...</td></tr>
+              <tr><th scope="row">아이디</th><td id="result-id">불러오는 중...</td></tr>
+              <tr><th scope="row">비밀번호</th><td id="result-password">불러오는 중...</td></tr>
+              <tr><th scope="row">이메일</th><td id="result-email">불러오는 중...</td></tr>
+              <tr><th scope="row">전화번호</th><td id="result-tel">불러오는 중...</td></tr>
+              <tr><th scope="row">생년월일</th><td id="result-birth">불러오는 중...</td></tr>
+
+              <!-- 관심 분야처럼 여러 개 고른 값은 JS에서 getAll로 처리 -->
+              <tr class="table-section-title">
+                <th colspan="2">선택 정보</th>
+              </tr>
+              <tr><th scope="row">성별</th><td id="result-gender">불러오는 중...</td></tr>
+              <tr><th scope="row">관심 분야</th><td id="result-interest">불러오는 중...</td></tr>
+              <tr><th scope="row">지역</th><td id="result-region">불러오는 중...</td></tr>
+              <tr><th scope="row">자기소개</th><td id="result-introduction">불러오는 중...</td></tr>
+
+              <tr class="table-section-title">
+                <th colspan="2">동의 정보</th>
+              </tr>
+              <tr><th scope="row">약관 동의</th><td id="result-terms">불러오는 중...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 다시 입력하고 싶을 때 원래 페이지로 돌아가기 -->
+        <div class="button-group">
+          <a href="./signup.html" class="btn btn-primary">다시 입력하기</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><small>© 2026 왕시훈. All rights reserved.</small></p>
+    </footer>
+  </body>
+</html>
